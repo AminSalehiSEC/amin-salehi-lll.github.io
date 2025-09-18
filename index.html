@@ -6,39 +6,46 @@
 <title>محمدامین صالحی – پژوهشگر و طراح</title>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family: 'Vazirmatn', sans-serif; }
-body { background:#f0f2f5; color:#333; scroll-behavior:smooth; overflow-x:hidden; }
-a { text-decoration:none; color:inherit; }
-header { position:fixed; top:0; width:100%; background:#2c3e50; color:white; z-index:1000; }
-header .nav-container { display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; }
-header nav ul { display:flex; list-style:none; }
-header nav ul li { margin:0 1rem; }
-header nav ul li a { color:white; font-weight:700; transition:0.3s; }
-header nav ul li a:hover { color:#3498db; }
-.hero { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:linear-gradient(135deg, #3498db, #8e44ad); color:white; padding:0 1rem; }
-.hero img { width:150px; height:150px; border-radius:50%; border:4px solid #fff; animation:float 3s ease-in-out infinite; }
-@keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);} }
-.hero h1, .hero p, section h2, section p { white-space:pre-wrap; overflow:hidden; }
-section { padding:6rem 2rem 4rem; }
-section h2 { font-size:2rem; text-align:center; margin-bottom:2rem; color:#2c3e50; position:relative; }
-section h2::after { content:''; display:block; width:60px; height:4px; background:#3498db; margin:1rem auto 0; border-radius:2px; }
-section p { max-width:900px; margin:0 auto 1rem; text-align:center; line-height:1.8; }
-.skills { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:2rem; max-width:1200px; margin:0 auto; }
-.skill { background:white; border-radius:10px; padding:1.5rem; text-align:center; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:0.3s; }
-.skill:hover { transform:translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.2); }
-.skill svg { width:60px; height:60px; margin-bottom:1rem; }
-.contact { text-align:center; }
-.contact a { display:inline-block; margin:0.5rem; padding:0.5rem 1rem; background:#3498db; color:white; border-radius:5px; transition:0.3s; }
-.contact a:hover { background:#2980b9; }
-footer { background:#2c3e50; color:white; text-align:center; padding:2rem; }
-@media (max-width:768px) { .hero h1{font-size:1.8rem;} section h2{font-size:1.5rem;} header .nav-container{flex-direction:column; gap:0.5rem;} header nav ul{flex-direction:column; gap:0.5rem;} .skill svg{width:50px;height:50px;} }
-.typing { border-right:2px solid #3498db; animation: blink-caret 0.75s step-end infinite; display:inline-block; white-space:pre-wrap; }
-@keyframes blink-caret { from,to{border-color:transparent;}50%{border-color:currentColor;} }
-.puzzle-piece { fill:none; stroke:#e74c3c; stroke-width:3; stroke-dasharray:100; stroke-dashoffset:100; transition:all 0.5s ease; cursor:pointer; }
-.puzzle-piece:hover { stroke:#3498db; transform:scale(1.1); }
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Vazirmatn',sans-serif;}
+body{background:#f0f2f5;color:#333;scroll-behavior:smooth;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+header{position:fixed;top:0;width:100%;background:#2c3e50;color:white;z-index:1000;}
+header .nav-container{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;}
+header nav ul{display:flex;list-style:none;}
+header nav ul li{margin:0 1rem;}
+header nav ul li a{color:white;font-weight:700;transition:0.3s;}
+header nav ul li a:hover{color:#3498db;}
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(135deg,#3498db,#8e44ad);color:white;padding:0 1rem;}
+.hero img{width:150px;height:150px;border-radius:50%;border:4px solid #fff;animation:float 3s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);}}
+section{padding:6rem 2rem 4rem;}
+section h2{font-size:2rem;text-align:center;margin-bottom:2rem;color:#2c3e50;position:relative;}
+section h2::after{content:'';display:block;width:60px;height:4px;background:#3498db;margin:1rem auto 0;border-radius:2px;}
+section p{max-width:900px;margin:0 auto 1rem;text-align:center;line-height:1.8;}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;max-width:1200px;margin:0 auto;}
+.skill{background:white;border-radius:10px;padding:1.5rem;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:0.3s;}
+.skill:hover{transform:translateY(-10px);box-shadow:0 10px 25px rgba(0,0,0,0.2);}
+.skill svg{width:60px;height:60px;margin-bottom:1rem;}
+.contact{text-align:center;}
+.contact a{display:inline-block;margin:0.5rem;padding:0.5rem 1rem;background:#3498db;color:white;border-radius:5px;transition:0.3s;}
+.contact a:hover{background:#2980b9;}
+footer{background:#2c3e50;color:white;text-align:center;padding:2rem;}
+.table-container{overflow-x:auto;margin:2rem auto;}
+table{border-collapse:collapse;width:100%;max-width:1000px;margin:1rem auto;}
+table,th,td{border:1px solid #ccc;}
+th,td{padding:0.5rem;text-align:center;}
+th{background:#3498db;color:white;}
+td{background:white;}
+.typing{border-right:2px solid #3498db;white-space:nowrap;overflow:hidden;}
+@keyframes typing{from{width:0;}to{width:100%;}}
+@keyframes blink-caret{from,to{border-color:transparent;}50%{border-color:currentColor;}}
+.puzzle-piece{fill:#e74c3c;stroke:#c0392b;stroke-width:2;transition:transform 0.5s;}
+.puzzle-piece:hover{transform:rotate(10deg) scale(1.1);}
+@media(max-width:768px){.hero h1{font-size:1.8rem;}section h2{font-size:1.5rem;}header .nav-container{flex-direction:column;gap:0.5rem;}header nav ul{flex-direction:column;gap:0.5rem;}.skill svg{width:50px;height:50px;}table,th,td{font-size:0.9rem;}}
 </style>
 </head>
 <body>
+
 <header>
 <div class="nav-container">
 <h2 id="headerTitle">محمدامین صالحی</h2>
@@ -68,43 +75,55 @@ footer { background:#2c3e50; color:white; text-align:center; padding:2rem; }
 <h2 id="skillsTitle">مهارت‌ها</h2>
 <div class="skills">
 <div class="skill">
-<svg viewBox="0 0 64 64"><path d="M16 48 C24 56, 40 56, 48 48 C56 40, 56 24, 48 16 C40 8, 24 8, 16 16 C8 24, 8 40, 16 48" stroke="#3776ab" stroke-width="4" fill="none"/></svg>
-<h3>پایتون</h3>
-<p>برنامه‌نویسی و طراحی سیستم‌ها</p>
-</div>
-<div class="skill">
-<svg viewBox="0 0 64 64">
-<path class="puzzle-piece" d="M20 20 Q30 10 40 20 Q50 10 60 20 Q50 30 40 20 Q30 30 20 20 Z"/>
-<path class="puzzle-piece" d="M22 22 Q32 12 42 22 Q52 12 62 22 Q52 32 42 22 Q32 32 22 22 Z"/>
-<path class="puzzle-piece" d="M24 24 Q34 14 44 24 Q54 14 64 24 Q54 34 44 24 Q34 34 24 24 Z"/>
+<!-- لوگو پایتون اصلی -->
+<svg viewBox="0 0 128 128">
+<path d="M64,0C28.654,0,0,28.654,0,64c0,35.346,28.654,64,64,64s64-28.654,64-64C128,28.654,99.346,0,64,0z" fill="#3776AB"/>
 </svg>
-<h3>تحلیل رفتار</h3>
-<p>مدل‌سازی و تحلیل سیستم‌های اجتماعی و اقتصادی</p>
+<h3 id="pythonTitle">پایتون</h3>
+<p id="pythonText">برنامه‌نویسی و طراحی سیستم‌ها</p>
 </div>
 <div class="skill">
-<svg viewBox="0 0 100 20"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Vazirmatn" font-size="10" fill="#3498db" class="typing">تایپ حرفه‌ای</text></svg>
-<h3>تایپ حرفه‌ای</h3>
-<p>تایپ PDF به Word با دقت و قالب‌بندی عالی</p>
+<!-- پازل مغز انیمیشنی -->
+<svg viewBox="0 0 64 64">
+<g class="puzzle-piece">
+<path d="M10 10 h20 v20 h-20 z"/>
+<path d="M34 10 h20 v20 h-20 z"/>
+<path d="M10 34 h20 v20 h-20 z"/>
+<path d="M34 34 h20 v20 h-20 z"/>
+</g>
+</svg>
+<h3 id="analysisTitle">تحلیل رفتار</h3>
+<p id="analysisText">مدل‌سازی و تحلیل سیستم‌های اجتماعی و اقتصادی</p>
 </div>
 <div class="skill">
-<svg viewBox="0 0 64 64"><path d="M10 50 L54 10" stroke="#2c3e50" stroke-width="4" fill="none"/><circle cx="54" cy="10" r="3" fill="#2c3e50"/></svg>
-<h3>طراحی لوگو</h3>
-<p>ایجاد لوگو و پوستر با SVG انیمیشنی</p>
+<svg viewBox="0 0 100 20" id="typingSvg">
+<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Vazirmatn" font-size="10" fill="#3498db" class="typing">تایپ حرفه‌ای</text>
+</svg>
+<h3 id="typingTitle">تایپ حرفه‌ای</h3>
+<p id="typingText">تایپ PDF به Word با دقت و قالب‌بندی عالی</p>
+</div>
+<div class="skill">
+<svg viewBox="0 0 64 64" id="penSvg">
+<path d="M10 50 L54 10" stroke="#2c3e50" stroke-width="4" fill="none"/>
+<circle cx="54" cy="10" r="3" fill="#2c3e50"/>
+</svg>
+<h3 id="designTitle">طراحی لوگو</h3>
+<p id="designText">ایجاد لوگو و پوستر با SVG انیمیشنی</p>
 </div>
 </div>
 </section>
 
 <section id="arkhavia">
-<h2>🌟 معرفی آرکاویا برای مشتری</h2>
-<p>آرکاویا – Civilization of Rooted Awakening</p>
-<p>آرکاویا یک سیستم مالی و اجتماعی نوآورانه است که بر پایه اعتماد اجتماعی و شفافیت کامل ساخته شده است...</p>
-<!-- ادامه متن آرکاویا -->
+<h2 id="arkhaviaTitle">🌟 معرفی آرکاویا برای مشتری</h2>
+<p id="arkhaviaIntro">آرکاویا – Civilization of Rooted Awakening</p>
+<p id="arkhaviaDesc">آرکاویا یک سیستم مالی و اجتماعی نوآورانه است که بر پایه اعتماد اجتماعی و شفافیت کامل ساخته شده است...</p>
+<!-- ادامه توضیحات آرکاویا -->
 </section>
 
 <section id="contact">
-<h2>ارتباط با من</h2>
-<p>ایمیل: <a href="mailto:amin.salehi.sec@gmail.com">amin.salehi.sec@gmail.com</a></p>
-<p>شماره تماس: <a href="tel:+989339291935">۰۹۳۳۹۲۹۱۹۳۵</a> | <a href="tel:+989309192975">۰۹۳۰۹۱۹۲۹۷۵</a></p>
+<h2 id="contactTitle">ارتباط با من</h2>
+<p id="contactEmail">ایمیل: <a href="mailto:amin.salehi.sec@gmail.com">amin.salehi.sec@gmail.com</a></p>
+<p id="contactPhone">شماره تماس: <a href="tel:+989339291935">۰۹۳۳۹۲۹۱۹۳۵</a> | <a href="tel:+989309192975">۰۹۳۰۹۱۹۲۹۷۵</a></p>
 <div class="contact">
 <a href="https://instagram.com/amin.salehi.lll" target="_blank">Instagram</a>
 <a href="https://t.me/amin.salehi.lll" target="_blank">Telegram</a>
@@ -118,16 +137,30 @@ footer { background:#2c3e50; color:white; text-align:center; padding:2rem; }
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded',()=>{
-  // انیمیشن تایپ متن hero
-  const heroText=document.getElementById('heroText');
-  const text=heroText.textContent;
-  heroText.textContent='';
-  let i=0;
-  function type(){ 
-    if(i<text.length){ heroText.textContent+=text[i]; i++; setTimeout(type,30);}
+document.addEventListener('DOMContentLoaded', () => {
+  // متن تایپ انیمیشن
+  const typingText = document.querySelector('.typing');
+  let textContent = typingText.textContent;
+  typingText.textContent = '';
+  let i = 0;
+  function type() {
+    if(i < textContent.length){
+      typingText.textContent += textContent.charAt(i);
+      i++;
+      setTimeout(type, 80);
+    }
   }
   type();
+
+  // انیمیشن پازل مغز
+  gsap.from(".puzzle-piece", {
+    scrollTrigger:{trigger:".puzzle-piece", start:"top 80%"},
+    duration:1,
+    y:-50,
+    opacity:0,
+    stagger:0.2,
+    ease:"bounce.out"
+  });
 });
 </script>
 </body>
