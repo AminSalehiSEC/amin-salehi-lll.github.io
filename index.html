@@ -6,40 +6,34 @@
 <title>محمدامین صالحی – پژوهشگر و طراح</title>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Vazirmatn',sans-serif; }
-body { background:#f0f2f5; color:#333; scroll-behavior:smooth; overflow-x:hidden; }
-a { text-decoration:none; color:inherit; }
-header { position:fixed; top:0; width:100%; background:#2c3e50; color:white; z-index:1000; }
-header .nav-container { display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; }
-header nav ul { display:flex; list-style:none; }
-header nav ul li { margin:0 1rem; }
-header nav ul li a { color:white; font-weight:700; transition:0.3s; }
-header nav ul li a:hover { color:#3498db; }
-.hero { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:linear-gradient(135deg,#3498db,#8e44ad); color:white; padding:0 1rem; }
-.hero img { width:150px; height:150px; border-radius:50%; border:4px solid #fff; animation:float 3s ease-in-out infinite; }
-@keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);} }
-section { padding:6rem 2rem 4rem; }
-section h2 { font-size:2rem; text-align:center; margin-bottom:2rem; color:#2c3e50; position:relative; }
-section h2::after { content:''; display:block; width:60px; height:4px; background:#3498db; margin:1rem auto 0; border-radius:2px; }
-section p { max-width:900px; margin:0 auto 1rem; text-align:center; line-height:1.8; }
-.skills { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2rem; max-width:1200px; margin:0 auto; }
-.skill { background:white; border-radius:10px; padding:1.5rem; text-align:center; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:0.3s; }
-.skill:hover { transform:translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.2); }
-.skill svg, .skill img { width:60px; height:60px; margin-bottom:1rem; }
-.contact { text-align:center; }
-.contact a { display:inline-block; margin:0.5rem; padding:0.5rem 1rem; background:#3498db; color:white; border-radius:5px; transition:0.3s; }
-.contact a:hover { background:#2980b9; }
-footer { background:#2c3e50; color:white; text-align:center; padding:2rem; }
-.table-container { overflow-x:auto; margin:2rem auto; }
-table { border-collapse:collapse; width:100%; max-width:1000px; margin:1rem auto; }
-table, th, td { border:1px solid #ccc; }
-th, td { padding:0.5rem; text-align:center; }
-th { background:#3498db; color:white; }
-td { background:white; }
-.typing { animation:typing 2s steps(30,end) forwards, blink-caret 0.75s step-end 3; }
-@keyframes typing { from { width:0; } to { width:100%; } }
-@keyframes blink-caret { from,to{border-color:transparent;}50%{border-color:currentColor;} }
-@media(max-width:768px){.hero h1{font-size:1.8rem;}section h2{font-size:1.5rem;}header .nav-container{flex-direction:column;gap:0.5rem;}header nav ul{flex-direction:column;gap:0.5rem;}.skill svg,.skill img{width:50px;height:50px;}table,th,td{font-size:0.9rem;}}
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Vazirmatn', sans-serif;}
+body {background:#f0f2f5; color:#333; scroll-behavior:smooth; overflow-x:hidden;}
+a {text-decoration:none; color:inherit;}
+header {position:fixed; top:0; width:100%; background:#2c3e50; color:white; z-index:1000;}
+header .nav-container {display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem;}
+header nav ul {display:flex; list-style:none;}
+header nav ul li {margin:0 1rem;}
+header nav ul li a {color:white; font-weight:700; transition:0.3s;}
+header nav ul li a:hover {color:#3498db;}
+.hero {height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:linear-gradient(135deg, #3498db, #8e44ad); color:white; padding:0 1rem;}
+.hero img {width:150px; height:150px; border-radius:50%; border:4px solid #fff; animation:float 3s ease-in-out infinite;}
+@keyframes float {0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);}}
+section {padding:6rem 2rem 4rem;}
+section h2 {font-size:2rem; text-align:center; margin-bottom:2rem; color:#2c3e50; position:relative;}
+section h2::after {content:''; display:block; width:60px; height:4px; background:#3498db; margin:1rem auto 0; border-radius:2px;}
+section p {max-width:900px; margin:0 auto 1rem; text-align:center; line-height:1.8;}
+.skills {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2rem; max-width:1200px; margin:0 auto;}
+.skill {background:white; border-radius:10px; padding:1.5rem; text-align:center; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:0.3s;}
+.skill:hover {transform:translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.2);}
+.skill img {width:60px; height:60px; margin-bottom:1rem;}
+.contact {text-align:center;}
+.contact a {display:inline-block; margin:0.5rem; padding:0.5rem 1rem; background:#3498db; color:white; border-radius:5px; transition:0.3s;}
+.contact a:hover {background:#2980b9;}
+footer {background:#2c3e50; color:white; text-align:center; padding:2rem;}
+.typing {border-right:2px solid #3498db; overflow:hidden; white-space:nowrap;}
+@keyframes typing {from{width:0;}to{width:100%;}}
+@keyframes blink {0%,100%{border-color:transparent;}50%{border-color:#3498db;}}
+@media(max-width:768px){.hero h1{font-size:1.8rem;}section h2{font-size:1.5rem;}header .nav-container{flex-direction:column;gap:0.5rem;}header nav ul{flex-direction:column;gap:0.5rem;}}
 </style>
 </head>
 <body>
@@ -71,64 +65,70 @@ td { background:white; }
 <section id="skills">
 <h2 id="skillsTitle">مهارت‌ها</h2>
 <div class="skills">
-  <div class="skill">
-    <img src="https://raw.githubusercontent.com/github/explore/main/topics/python/python.png" alt="Python"/>
-    <h3>پایتون</h3>
-    <p>برنامه‌نویسی و طراحی سیستم‌ها</p>
-  </div>
-  <div class="skill">
-    <svg viewBox="0 0 64 64"><path d="M20 20 Q30 10 40 20 Q50 10 60 20 Q50 30 40 20 Q30 30 20 20 Z" stroke="#e74c3c" stroke-width="3" fill="none" stroke-dasharray="100" stroke-dashoffset="100"/></svg>
-    <h3>تحلیل رفتار</h3>
-    <p>مدل‌سازی و تحلیل سیستم‌های اجتماعی و اقتصادی</p>
-  </div>
-  <div class="skill">
-    <svg viewBox="0 0 64 64">
-      <rect x="8" y="20" width="48" height="24" rx="3" ry="3" stroke="#34495e" stroke-width="3" fill="none" stroke-dasharray="100" stroke-dashoffset="100"/>
-      <line x1="8" y1="28" x2="56" y2="28" stroke="#34495e" stroke-width="2"/>
-      <line x1="8" y1="36" x2="56" y2="36" stroke="#34495e" stroke-width="2"/>
-    </svg>
-    <h3>تایپ حرفه‌ای</h3>
-    <p>تایپ سریع و حرفه‌ای فارسی و انگلیسی</p>
-  </div>
-  <div class="skill">
-    <svg viewBox="0 0 64 64">
-      <path d="M10 50 L54 10" stroke="#2c3e50" stroke-width="4" fill="none" stroke-dasharray="60" stroke-dashoffset="60"/>
-      <circle cx="54" cy="10" r="3" fill="#2c3e50"/>
-    </svg>
-    <h3>طراحی لوگو</h3>
-    <p>طراحی خلاقانه لوگو و برندینگ</p>
-  </div>
+<div class="skill">
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo">
+<h3>پایتون</h3>
+<p>برنامه‌نویسی و طراحی سیستم‌ها</p>
+</div>
+<div class="skill">
+<img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png" alt="Brain Logo">
+<h3>تحلیل رفتار</h3>
+<p>مدل‌سازی و تحلیل سیستم‌های اجتماعی و اقتصادی</p>
+</div>
+<div class="skill">
+<img src="https://cdn-icons-png.flaticon.com/512/1828/1828490.png" alt="Typing Logo">
+<h3>تایپ حرفه‌ای</h3>
+<p>تایپ PDF به Word با دقت و قالب‌بندی عالی</p>
+</div>
+<div class="skill">
+<img src="https://cdn-icons-png.flaticon.com/512/1250/1250615.png" alt="Design Logo">
+<h3>طراحی لوگو</h3>
+<p>ایجاد لوگو و پوستر با SVG انیمیشنی</p>
+</div>
 </div>
 </section>
 
 <section id="arkhavia">
-<h2 id="arkhaviaTitle">🌟 معرفی آرکاویا برای مشتری</h2>
-<p id="arkhaviaIntro">آرکاویا – Civilization of Rooted Awakening، یک سیستم مالی غیرمتمرکز و اعتباری است که بر اعتماد و رفتار مسئولانه کاربران بنا شده. کاربران با فعالیت‌های واقعی و پاسخگویی به تعهداتشان، اعتبار کسب می‌کنند و امکان دسترسی به وام‌ها و جوایز شبکه را دارند.</p>
+<h2>🌟 معرفی آرکاویا برای مشتری</h2>
+<p>آرکاویا – Civilization of Rooted Awakening</p>
+<p>آرکاویا یک سیستم مالی و اجتماعی نوآورانه است که بر پایه اعتماد اجتماعی و شفافیت کامل ساخته شده است...</p>
+<!-- توضیحات کامل آرکاویا مثل قبل اضافه می‌شود -->
 </section>
 
 <section id="contact">
 <h2>ارتباط با من</h2>
+<p>ایمیل: <a href="mailto:amin.salehi.sec@gmail.com">amin.salehi.sec@gmail.com</a></p>
+<p>شماره تماس: <a href="tel:+989339291935">۰۹۳۳۹۲۹۱۹۳۵</a> | <a href="tel:+989309192975">۰۹۳۰۹۱۹۲۹۷۵</a></p>
 <div class="contact">
-  <a href="mailto:nikamin.analysis@gmail.com">ایمیل</a>
-  <a href="https://t.me/nikamin" target="_blank">تلگرام</a>
-  <a href="https://github.com/nikamin" target="_blank">گیت‌هاب</a>
+<a href="https://instagram.com/amin.salehi.lll" target="_blank">Instagram</a>
+<a href="https://t.me/amin.salehi.lll" target="_blank">Telegram</a>
 </div>
 </section>
 
 <footer>
-<p>© 2025 محمدامین صالحی | تمامی حقوق محفوظ است.</p>
+<p>&copy; 2025 محمدامین صالحی | تمامی حقوق محفوظ است.</p>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
-gsap.from("#heroTitle", {opacity:0, y:50, duration:1});
-gsap.from("#heroText", {opacity:0, y:50, duration:1, delay:0.5});
-gsap.from("#aboutTitle", {scrollTrigger:"#aboutTitle", opacity:0, x:-100, duration:1});
-gsap.from("#aboutText", {scrollTrigger:"#aboutTitle", opacity:0, x:100, duration:1, delay:0.3});
-gsap.from(".skill", {scrollTrigger:".skills", opacity:0, y:50, duration:1, stagger:0.3});
-gsap.from("#arkhaviaTitle", {scrollTrigger:"#arkhaviaTitle", opacity:0, y:50, duration:1});
-gsap.from("#arkhaviaIntro", {scrollTrigger:"#arkhaviaTitle", opacity:0, y:50, duration:1, delay:0.3});
+document.addEventListener('DOMContentLoaded',()=>{
+if(typeof gsap==='undefined'||typeof ScrollTrigger==='undefined'){console.error('GSAP or ScrollTrigger failed');return;}
+gsap.registerPlugin(ScrollTrigger);
+
+function typeText(id,speed=50){
+const el=document.getElementById(id); if(!el)return; const text=el.innerText; el.innerText=''; let i=0;
+const interval=setInterval(()=>{el.innerText+=text[i]; i++; if(i>=text.length)clearInterval(interval);},speed);
+}
+
+ScrollTrigger.create({
+trigger:"#home", start:"top 80%", onEnter:()=>{typeText('heroTitle',30); setTimeout(()=>typeText('heroText',20),800);}
+});
+
+ScrollTrigger.create({
+trigger:"#about", start:"top 80%", onEnter:()=>{typeText('aboutTitle',30); setTimeout(()=>typeText('aboutText',20),800);}
+});
+});
 </script>
 </body>
 </html>
