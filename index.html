@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>محمدامین صالحی – پژوهشگر و طراح</title>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Vazirmatn', sans-serif; }
         body { background: #f0f2f5; color: #333; scroll-behavior: smooth; overflow-x: hidden; }
@@ -20,7 +18,7 @@
         .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #3498db, #8e44ad); color: white; padding: 0 1rem; }
         .hero img { width: 150px; height: 150px; border-radius: 50%; border: 4px solid #fff; animation: float 3s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-        .hero h1, .hero p, section h2, section h3, section p { border-right: 2px solid currentColor; white-space: nowrap; overflow: hidden; width: 0; }
+        .hero h1, .hero p, section h2, section h3, section p, table th, table td { border-right: 2px solid currentColor; white-space: nowrap; overflow: hidden; width: 0; opacity: 1; }
         section { padding: 6rem 2rem 4rem; }
         section h2 { font-size: 2rem; text-align: center; margin-bottom: 2rem; color: #2c3e50; position: relative; }
         section h2::after { content: ''; display: block; width: 60px; height: 4px; background: #3498db; margin: 1rem auto 0; border-radius: 2px; }
@@ -48,6 +46,7 @@
             header .nav-container { flex-direction: column; gap: 0.5rem; }
             header nav ul { flex-direction: column; gap: 0.5rem; }
             .skill svg { width: 50px; height: 50px; }
+            table, th, td { font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -132,13 +131,13 @@
         <h3 id="featuresTitle">۲️⃣ ویژگی‌های کلیدی</h3>
         <div class="table-container">
             <table>
-                <tr><th>ویژگی</th><th>توضیح</th></tr>
-                <tr><td>سیستم اعتبار اجتماعی (C)</td><td>کاربران با فعالیت‌های واقعی و پاسخگویی به وام‌ها، امتیاز می‌گیرند.</td></tr>
-                <tr><td>قرعه‌کشی و مشوق‌ها</td><td>کاربران جدید یا کم‌اعتبار از طریق قرعه‌کشی دسترسی به وام پیدا می‌کنند.</td></tr>
-                <tr><td>وام بدون بهره</td><td>سیستم به جای بهره، رفتار مسئولانه را افزایش می‌دهد.</td></tr>
-                <tr><td>شفافیت تراکنش‌ها</td><td>هر تراکنش، وام، و رتبه اعتباری روی بلاکچین ثبت می‌شود.</td></tr>
-                <tr><td>قابل توسعه و مقیاس‌پذیر</td><td>طراحی ماژولار و معماری microservices اجازه می‌دهد سیستم با افزایش کاربران رشد کند.</td></tr>
-                <tr><td>امنیت و احراز هویت</td><td>احراز هویت امن با JWT/OAuth2 و مدیریت هویت دیجیتال.</td></tr>
+                <tr><th id="tableFeatureHeader">ویژگی</th><th id="tableDescHeader">توضیح</th></tr>
+                <tr><td id="tableFeature1">سیستم اعتبار اجتماعی (C)</td><td id="tableDesc1">کاربران با فعالیت‌های واقعی و پاسخگویی به وام‌ها، امتیاز می‌گیرند.</td></tr>
+                <tr><td id="tableFeature2">قرعه‌کشی و مشوق‌ها</td><td id="tableDesc2">کاربران جدید یا کم‌اعتبار از طریق قرعه‌کشی دسترسی به وام پیدا می‌کنند.</td></tr>
+                <tr><td id="tableFeature3">وام بدون بهره</td><td id="tableDesc3">سیستم به جای بهره، رفتار مسئولانه را افزایش می‌دهد.</td></tr>
+                <tr><td id="tableFeature4">شفافیت تراکنش‌ها</td><td id="tableDesc4">هر تراکنش، وام، و رتبه اعتباری روی بلاکچین ثبت می‌شود.</td></tr>
+                <tr><td id="tableFeature5">قابل توسعه و مقیاس‌پذیر</td><td id="tableDesc5">طراحی ماژولار و معماری microservices اجازه می‌دهد سیستم با افزایش کاربران رشد کند.</td></tr>
+                <tr><td id="tableFeature6">امنیت و احراز هویت</td><td id="tableDesc6">احراز هویت امن با JWT/OAuth2 و مدیریت هویت دیجیتال.</td></tr>
             </table>
         </div>
         <h3 id="techTitle">۳️⃣ فناوری‌های استفاده شده</h3>
@@ -174,120 +173,143 @@
         <p>&copy; 2025 محمدامین صالحی | تمامی حقوق محفوظ است.</p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script>
-        gsap.registerPlugin(ScrollTrigger);
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
 
-        // Simple typing function
-        function typeElement(elementId, speed = 30) {
-            const el = document.getElementById(elementId);
-            const text = el.textContent || el.innerHTML;
-            el.textContent = '';
-            el.style.width = 'auto';
-            gsap.to(el, {
-                width: '100%',
-                duration: text.length * speed / 1000,
-                ease: 'steps(' + text.length + ')',
-                onStart: () => el.classList.add('typing'),
-                onComplete: () => {
-                    el.style.borderRight = 'none';
-                    el.classList.remove('typing');
+            // Simple typing function
+            function typeElement(elementId, speed = 30) {
+                const el = document.getElementById(elementId);
+                if (!el) {
+                    console.error(`Element with ID ${elementId} not found`);
+                    return;
+                }
+                const text = el.innerHTML;
+                el.innerHTML = '';
+                el.style.width = 'auto';
+                gsap.to(el, {
+                    width: '100%',
+                    duration: text.length * speed / 1000,
+                    ease: 'steps(' + text.length + ')',
+                    onStart: () => el.classList.add('typing'),
+                    onComplete: () => {
+                        el.style.borderRight = 'none';
+                        el.classList.remove('typing');
+                    }
+                });
+            }
+
+            // Hero section
+            typeElement('headerTitle', 50);
+            typeElement('heroTitle', 50);
+            setTimeout(() => typeElement('heroText', 20), 1500);
+
+            // Scroll-triggered animations
+            ScrollTrigger.create({
+                trigger: "#about",
+                start: "top 80%",
+                onEnter: () => {
+                    typeElement('aboutTitle');
+                    setTimeout(() => typeElement('aboutText', 20), 800);
                 }
             });
-        }
 
-        // Hero section
-        typeElement('heroTitle', 50);
-        setTimeout(() => typeElement('heroText', 20), 1500);
+            ScrollTrigger.create({
+                trigger: "#skills",
+                start: "top 80%",
+                onEnter: () => {
+                    typeElement('skillsTitle');
+                    gsap.from(".skill", { opacity: 0, y: 50, duration: 1, stagger: 0.2 });
+                    gsap.to("#pythonSvg path", { strokeDashoffset: 0, duration: 2 });
+                    gsap.to("#brainSvg path", { strokeDashoffset: 0, duration: 2 });
+                    gsap.to("#typingSvg text", {
+                        width: "100%", duration: 2, ease: "steps(4)",
+                        onComplete: () => gsap.to("#typingSvg text", { width: "0%", duration: 1, delay: 1, onComplete: () => gsap.set("#typingSvg text", { width: "100%" }) })
+                    });
+                    gsap.to("#penSvg path", { strokeDashoffset: 0, duration: 2 });
+                    setTimeout(() => {
+                        typeElement('pythonTitle');
+                        typeElement('pythonText', 15);
+                        typeElement('analysisTitle');
+                        typeElement('analysisText', 15);
+                        typeElement('typingTitle');
+                        typeElement('typingText', 15);
+                        typeElement('designTitle');
+                        typeElement('designText', 15);
+                    }, 1500);
+                }
+            });
 
-        // Scroll-triggered animations
-        ScrollTrigger.create({
-            trigger: "#about",
-            start: "top 80%",
-            onEnter: () => {
-                typeElement('aboutTitle');
-                setTimeout(() => typeElement('aboutText', 20), 800);
-            }
-        });
+            ScrollTrigger.create({
+                trigger: "#arkhavia",
+                start: "top 80%",
+                onEnter: () => {
+                    typeElement('arkhaviaTitle');
+                    setTimeout(() => {
+                        typeElement('arkhaviaIntro', 20);
+                        typeElement('arkhaviaDesc', 15);
+                        typeElement('principlesTitle');
+                        typeElement('trustSocial', 15);
+                        typeElement('creditGain', 15);
+                        typeElement('accessLevel', 15);
+                        typeElement('transparency', 15);
+                        typeElement('transactionLog', 15);
+                        typeElement('historyView', 15);
+                        typeElement('incentives', 15);
+                        typeElement('mechanisms', 15);
+                        typeElement('gameTheory', 15);
+                        typeElement('decentralization', 15);
+                        typeElement('blockchainUse', 15);
+                        typeElement('security', 15);
+                        typeElement('featuresTitle');
+                        typeElement('tableFeatureHeader');
+                        typeElement('tableDescHeader');
+                        typeElement('tableFeature1', 15);
+                        typeElement('tableDesc1', 15);
+                        typeElement('tableFeature2', 15);
+                        typeElement('tableDesc2', 15);
+                        typeElement('tableFeature3', 15);
+                        typeElement('tableDesc3', 15);
+                        typeElement('tableFeature4', 15);
+                        typeElement('tableDesc4', 15);
+                        typeElement('tableFeature5', 15);
+                        typeElement('tableDesc5', 15);
+                        typeElement('tableFeature6', 15);
+                        typeElement('tableDesc6', 15);
+                        typeElement('techTitle');
+                        typeElement('techBackend', 15);
+                        typeElement('techFrontend', 15);
+                        typeElement('techBlockchain', 15);
+                        typeElement('techSecurity', 15);
+                        typeElement('techAnalytics', 15);
+                        typeElement('benefitsTitle');
+                        typeElement('benefitTrust', 15);
+                        typeElement('benefitEncourage', 15);
+                        typeElement('benefitLoan', 15);
+                        typeElement('benefitSecurity', 15);
+                        typeElement('benefitScale', 15);
+                        typeElement('visionTitle');
+                        typeElement('visionDesc', 15);
+                        typeElement('arkhaviaExtra', 15);
+                        typeElement('arkhaviaPhoenix', 15);
+                        typeElement('arkhaviaRebirth', 15);
+                    }, 1000);
+                }
+            });
 
-        ScrollTrigger.create({
-            trigger: "#skills",
-            start: "top 80%",
-            onEnter: () => {
-                typeElement('skillsTitle');
-                gsap.from(".skill", { opacity: 0, y: 50, duration: 1, stagger: 0.2 });
-                gsap.to("#pythonSvg path", { strokeDashoffset: 0, duration: 2 });
-                gsap.to("#brainSvg path", { strokeDashoffset: 0, duration: 2 });
-                gsap.to("#typingSvg text", {
-                    width: "100%", duration: 2, ease: "steps(4)",
-                    onComplete: () => gsap.to("#typingSvg text", { width: "0%", duration: 1, delay: 1 })
-                });
-                gsap.to("#penSvg path", { strokeDashoffset: 0, duration: 2 });
-                setTimeout(() => {
-                    typeElement('pythonTitle');
-                    typeElement('pythonText', 15);
-                    typeElement('analysisTitle');
-                    typeElement('analysisText', 15);
-                    typeElement('typingTitle');
-                    typeElement('typingText', 15);
-                    typeElement('designTitle');
-                    typeElement('designText', 15);
-                }, 1500);
-            }
-        });
-
-        ScrollTrigger.create({
-            trigger: "#arkhavia",
-            start: "top 80%",
-            onEnter: () => {
-                typeElement('arkhaviaTitle');
-                setTimeout(() => {
-                    typeElement('arkhaviaIntro', 20);
-                    typeElement('arkhaviaDesc', 15);
-                    typeElement('principlesTitle');
-                    typeElement('trustSocial', 15);
-                    typeElement('creditGain', 15);
-                    typeElement('accessLevel', 15);
-                    typeElement('transparency', 15);
-                    typeElement('transactionLog', 15);
-                    typeElement('historyView', 15);
-                    typeElement('incentives', 15);
-                    typeElement('mechanisms', 15);
-                    typeElement('gameTheory', 15);
-                    typeElement('decentralization', 15);
-                    typeElement('blockchainUse', 15);
-                    typeElement('security', 15);
-                    typeElement('featuresTitle');
-                    typeElement('techTitle');
-                    typeElement('techBackend', 15);
-                    typeElement('techFrontend', 15);
-                    typeElement('techBlockchain', 15);
-                    typeElement('techSecurity', 15);
-                    typeElement('techAnalytics', 15);
-                    typeElement('benefitsTitle');
-                    typeElement('benefitTrust', 15);
-                    typeElement('benefitEncourage', 15);
-                    typeElement('benefitLoan', 15);
-                    typeElement('benefitSecurity', 15);
-                    typeElement('benefitScale', 15);
-                    typeElement('visionTitle');
-                    typeElement('visionDesc', 15);
-                    typeElement('arkhaviaExtra', 15);
-                    typeElement('arkhaviaPhoenix', 15);
-                    typeElement('arkhaviaRebirth', 15);
-                }, 1000);
-            }
-        });
-
-        ScrollTrigger.create({
-            trigger: "#contact",
-            start: "top 80%",
-            onEnter: () => {
-                typeElement('contactTitle');
-                setTimeout(() => {
-                    typeElement('contactEmail', 15);
-                    typeElement('contactPhone', 15);
-                }, 800);
-            }
+            ScrollTrigger.create({
+                trigger: "#contact",
+                start: "top 80%",
+                onEnter: () => {
+                    typeElement('contactTitle');
+                    setTimeout(() => {
+                        typeElement('contactEmail', 15);
+                        typeElement('contactPhone', 15);
+                    }, 800);
+                }
+            });
         });
     </script>
 </body>
