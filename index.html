@@ -1,143 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction Page</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محمدامین صالحی | صفحه معرفی</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Vazirmatn', sans-serif; }
+  body { background: #0e1117; color: #fff; overflow-x: hidden; }
 
-        body {
-            background-color: #f0f2f5;
-            color: #333;
-        }
+  /* Navigation Bar */
+  nav { position: fixed; top: 0; width: 100%; background: rgba(20,20,20,0.95); padding: 1rem 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.5);}
+  nav ul { display: flex; justify-content: center; list-style: none; }
+  nav ul li { margin: 0 1.5rem; }
+  nav ul li a { text-decoration: none; color: #fff; font-weight: 600; transition: color 0.3s; }
+  nav ul li a:hover { color: #00d4ff; }
 
-        /* Navigation Bar */
-        nav {
-            background-color: #2c3e50;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+  /* Hero Section */
+  .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #3498db, #8e44ad); position: relative; }
+  .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; animation: fadeInDown 1s ease forwards; opacity: 0; }
+  .hero h2 { font-size: 1.5rem; margin-bottom: 1.5rem; color: #ffffffaa; animation: fadeInDown 1.2s ease forwards; opacity: 0; }
+  .hero p { max-width: 600px; line-height: 1.6; font-size: 1.1rem; margin-bottom: 2rem; animation: fadeIn 1.4s ease forwards; opacity: 0; }
+  .hero .btn { padding: 0.8rem 1.8rem; border-radius: 50px; border: none; background: #00d4ff; color: #0e1117; font-weight: 700; cursor: pointer; font-size: 1rem; transition: transform 0.3s, background 0.3s; animation: fadeIn 1.6s ease forwards; opacity: 0; }
+  .hero .btn:hover { transform: scale(1.1); background: #00a8c7; }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-        }
+  /* Social Icons */
+  .social { margin-top: 25px; display: flex; justify-content: center; gap: 20px; animation: fadeIn 1.8s ease forwards; opacity: 0; }
+  .social a { color: #00d4ff; font-size: 1.5rem; text-decoration: none; transition: color 0.3s; }
+  .social a:hover { color: #00a8c7; }
 
-        nav ul li {
-            margin: 0 1.5rem;
-        }
+  /* Sections */
+  section { padding: 100px 20px; }
+  #about { background: #111418; text-align: center; }
+  #contact { background: #0e1117; text-align: center; }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-        }
+  /* Animations */
+  @keyframes fadeInDown { 0% { opacity:0; transform: translateY(-50px); } 100% { opacity:1; transform: translateY(0); } }
+  @keyframes fadeIn { 0% { opacity:0; } 100% { opacity:1; } }
 
-        nav ul li a:hover {
-            color: #3498db;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(135deg, #3498db, #8e44ad);
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .hero button {
-            padding: 0.8rem 1.5rem;
-            font-size: 1rem;
-            border: none;
-            background-color: #e74c3c;
-            color: white;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: transform 0.3s, background-color 0.3s;
-        }
-
-        .hero button:hover {
-            background-color: #c0392b;
-            transform: scale(1.1);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav ul li {
-                margin: 0.5rem 0;
-            }
-        }
-    </style>
+  /* Responsive */
+  @media (max-width:768px) {
+    .hero h1 { font-size:2.2rem; }
+    .hero h2 { font-size:1.2rem; }
+    .hero p { font-size:1rem; }
+    nav ul { flex-direction: column; gap:10px; }
+  }
+</style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
 
-    <section class="hero">
-        <h1>Welcome to My World</h1>
-        <p>Hi, I'm [Your Name], a passionate individual dedicated to [your passion or profession]. Let's create something amazing together!</p>
-        <button id="ctaButton">Get in Touch</button>
-    </section>
+<nav>
+  <ul>
+    <li><a href="#home">خانه</a></li>
+    <li><a href="#about">درباره من</a></li>
+    <li><a href="#contact">تماس</a></li>
+  </ul>
+</nav>
 
-    <script>
-        // JavaScript for button interaction
-        const ctaButton = document.getElementById('ctaButton');
-        ctaButton.addEventListener('click', () => {
-            alert('Thank you for reaching out! Let’s connect soon.');
-        });
+<section class="hero" id="home">
+  <h1>محمدامین صالحی</h1>
+  <h2>فریلنسر | برنامه‌نویس | تولید محتوا</h2>
+  <p>سلام! من محمدامین هستم. تخصص من در تایپ حرفه‌ای، تولید محتوا، برنامه‌نویسی و طراحی سایت است. پروژه‌ها را با دقت، کیفیت و سرعت تحویل می‌دهم و همیشه رضایت کارفرما اولویت من است.</p>
+  <button class="btn" onclick="window.location.href='mailto:nikamin.analysis@gmail.com'">تماس با من</button>
+  <div class="social">
+    <a href="https://github.com/aminsalehisec" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/aminsalehi/" target="_blank">LinkedIn</a>
+    <a href="https://t.me/nikamin" target="_blank">Telegram</a>
+  </div>
+</section>
 
-        // Smooth scroll for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+<section id="about">
+  <h2>درباره من</h2>
+  <p>من محمدامین صالحی هستم. سابقه چندین پروژه موفق در زمینه تایپ، تولید محتوا و برنامه‌نویسی دارم و همیشه کیفیت و سرعت را در اولویت قرار می‌دهم. هدفم خلق تجربه‌ای حرفه‌ای و رضایت کامل مشتری است.</p>
+</section>
+
+<section id="contact">
+  <h2>راه‌های ارتباطی</h2>
+  <p>برای همکاری و پروژه‌های جدید، می‌توانید از طریق ایمیل، تلگرام یا لینکدین با من تماس بگیرید.</p>
+</section>
+
+<script>
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e){
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+
 </body>
 </html>
