@@ -1,165 +1,127 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>محمدامین صالحی | معرفی</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Tahoma', sans-serif;
-      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
-      color: #fff;
-      text-align: center;
-      overflow-x: hidden;
-    }
-    header {
-      padding: 3rem 1rem;
-      animation: fadeIn 2s ease-in-out;
-    }
-    header img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 4px solid #fff;
-      box-shadow: 0 0 20px rgba(255,255,255,0.3);
-      animation: float 4s ease-in-out infinite;
-    }
-    header h1 {
-      margin-top: 1rem;
-      font-size: 2rem;
-    }
-    header p {
-      font-size: 1rem;
-      opacity: 0.8;
-    }
-    section {
-      padding: 2rem 1rem;
-      max-width: 800px;
-      margin: auto;
-    }
-    .links a {
-      display: inline-block;
-      margin: 1rem;
-      padding: 0.8rem 1.2rem;
-      border-radius: 8px;
-      text-decoration: none;
-      color: #fff;
-      background: #e94560;
-      transition: transform 0.3s;
-    }
-    .links a:hover {
-      transform: scale(1.1);
-      background: #ff2e63;
-    }
-    .contact {
-      background: rgba(255,255,255,0.1);
-      border-radius: 10px;
-      padding: 1rem;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-    }
-    /* Chat Box */
-    .chatbox {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 300px;
-      background: #fff;
-      color: #000;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    }
-    .chatbox header {
-      background: #0f3460;
-      color: #fff;
-      padding: 0.5rem;
-      font-size: 1rem;
-    }
-    .messages {
-      max-height: 200px;
-      overflow-y: auto;
-      padding: 0.5rem;
-      text-align: left;
-      font-size: 0.85rem;
-    }
-    .input-box {
-      display: flex;
-      border-top: 1px solid #ccc;
-    }
-    .input-box input {
-      flex: 1;
-      border: none;
-      padding: 0.5rem;
-    }
-    .input-box button {
-      background: #e94560;
-      border: none;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes float {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محمدامین صالحی – پژوهشگر و طراح</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    /* Reset & basic styles */
+    * {margin:0; padding:0; box-sizing:border-box; font-family: 'Vazirmatn', sans-serif;}
+    body {background: #f0f2f5; color:#333; scroll-behavior: smooth;}
+    a {text-decoration:none; color:inherit;}
+
+    /* Header */
+    header {position:fixed; top:0; width:100%; background:#2c3e50; color:white; z-index:1000;}
+    header .nav-container {display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem;}
+    header nav ul {display:flex; list-style:none;}
+    header nav ul li {margin:0 1rem;}
+    header nav ul li a {color:white; font-weight:700; transition:0.3s;}
+    header nav ul li a:hover {color:#3498db;}
+
+    /* Hero Section */
+    .hero {height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:linear-gradient(135deg,#3498db,#8e44ad); color:white; padding:0 1rem;}
+    .hero img {width:150px; height:150px; border-radius:50%; border:4px solid #fff; animation: float 3s ease-in-out infinite;}
+    .hero h1 {font-size:3rem; margin:1rem 0;}
+    .hero p {font-size:1.2rem; max-width:600px;}
+    @keyframes float {0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);}}
+
+    /* Sections */
+    section {padding:6rem 2rem 4rem;}
+    section h2 {font-size:2rem; text-align:center; margin-bottom:2rem; color:#2c3e50; position:relative;}
+    section h2::after {content:''; display:block; width:60px; height:4px; background:#3498db; margin:1rem auto 0; border-radius:2px;}
+
+    /* Skills */
+    .skills {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2rem; max-width:1200px; margin:0 auto;}
+    .skill {background:white; border-radius:10px; padding:1.5rem; text-align:center; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:0.3s; cursor:pointer;}
+    .skill:hover {transform:translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.2);}
+    .skill svg {width:60px; height:60px; margin-bottom:1rem; fill:#3498db;}
+    .skill h3 {margin-bottom:0.5rem; font-size:1.2rem;}
+    .skill p {font-size:0.9rem; color:#555;}
+
+    /* Contact */
+    .contact {text-align:center;}
+    .contact a {display:inline-block; margin:0.5rem; padding:0.5rem 1rem; background:#3498db; color:white; border-radius:5px; transition:0.3s;}
+    .contact a:hover {background:#2980b9;}
+
+    /* Footer */
+    footer {background:#2c3e50; color:white; text-align:center; padding:2rem;}
+    footer a {color:#3498db; margin:0 0.5rem;}
+</style>
 </head>
 <body>
 
-  <header>
-    <img src="https://avatars.githubusercontent.com/u/149763325?v=4" alt="Profile">
+<header>
+    <div class="nav-container">
+        <h2>محمدامین صالحی</h2>
+        <nav>
+            <ul>
+                <li><a href="#about">درباره من</a></li>
+                <li><a href="#skills">مهارت‌ها</a></li>
+                <li><a href="#projects">پروژه‌ها</a></li>
+                <li><a href="#contact">ارتباط</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero" id="home">
+    <img src="https://avatars.githubusercontent.com/u/96920932?v=4" alt="محمدامین صالحی">
     <h1>محمدامین صالحی</h1>
-    <p>پژوهشگر، طراح و تحلیلگر چندبعدی</p>
-  </header>
+    <p>پژوهشگر، طراح و تحلیلگر چندبعدی. دانشجوی ریاضیات و کاربردها با تجربه در پایتون، طراحی سیستم، فلوچارت، طراحی لوگو و تایپ حرفه‌ای.</p>
+</section>
 
-  <section>
+<section id="about">
     <h2>درباره من</h2>
-    <p>
-      دانشجوی ریاضیات و کاربردها، دانشگاه شهید بهشتی تهران.  
-      علاقه‌مند به برنامه‌نویسی پایتون، طراحی سیستم، سناریو و فلوچارت، طراحی لوگو و پوستر، و تایپ حرفه‌ای.  
-      فعالیت‌هایم در حوزه‌های فلسفه، روانشناسی، تحلیل رفتار متقابل، مهندسی شرایط و اجتماعی و نویسندگی متون کوتاه متمرکز است.
-    </p>
+    <p style="max-width:800px; margin:0 auto; text-align:center; line-height:1.8;">هم‌زمان، پژوهش‌ها و فعالیت‌های من در حوزه‌های فلسفه، روانشناسی، تحلیل رفتار متقابل، مهندسی شرایط و مهندسی اجتماعی، و نویسندگی متون کوتاه فلسفی، عرفانی و جامعه‌شناسی تمرکز دارد. دارای دقت و حساسیت بالا نسبت به قول و قرارها و تعهدات کاری، و علاقه‌مند به مدیریت پروژه و تحلیل رفتارهای اجتماعی و اقتصادی برای خلق راهکارهای عملی و نوآورانه.</p>
+</section>
 
-    <div class="links">
-      <a href="https://t.me/amin.salehi.lll" target="_blank">تلگرام</a>
-      <a href="https://instagram.com/amin.salehi.lll" target="_blank">اینستاگرام</a>
+<section id="skills">
+    <h2>مهارت‌ها</h2>
+    <div class="skills">
+        <div class="skill">
+            <svg viewBox="0 0 64 64"><path d="M32 0L64 64H0z"/></svg>
+            <h3>پایتون</h3>
+            <p>برنامه‌نویسی، تحلیل داده، طراحی سیستم و اتوماسیون.</p>
+        </div>
+        <div class="skill">
+            <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg>
+            <h3>طراحی لوگو</h3>
+            <p>ساخت لوگو و پوستر با نمونه کارهای عملی و حرفه‌ای.</p>
+        </div>
+        <div class="skill">
+            <svg viewBox="0 0 64 64"><rect x="10" y="10" width="44" height="44"/></svg>
+            <h3>تایپ حرفه‌ای</h3>
+            <p>تایپ PDF به Word، قالب‌بندی دقیق، بررسی املایی و نگارشی.</p>
+        </div>
+        <div class="skill">
+            <svg viewBox="0 0 64 64"><polygon points="32,0 64,64 0,64"/></svg>
+            <h3>مهندسی شرایط</h3>
+            <p>تحلیل رفتار، طراحی سناریو و فلوچارت، مهندسی اجتماعی.</p>
+        </div>
     </div>
+</section>
 
+<section id="projects">
+    <h2>پروژه‌ها</h2>
+    <p style="max-width:800px; margin:0 auto; text-align:center;">در حال حاضر به عنوان طراح استارتاپ <strong>آرکاویا</strong> فعالیت می‌کنم. پروژه در دست تعریف است و بر مبنای تحلیل رفتار و سیستم‌های نوآورانه ساخته خواهد شد.</p>
+</section>
+
+<section id="contact">
+    <h2>ارتباط با من</h2>
+    <p>ایمیل: <a href="mailto:amin.salehi.sec@gmail.com">amin.salehi.sec@gmail.com</a></p>
+    <p>شماره تماس: <a href="tel:+989339291935">۰۹۳۳۹۲۹۱۹۳۵</a> | <a href="tel:+989309192975">۰۹۳۰۹۱۹۲۹۷۵</a></p>
     <div class="contact">
-      📧 ایمیل: amin.salehi.sec@gmail.com <br>
-      📞 تماس: ۰۹۳۳۹۲۹۱۹۳۵ | ۰۹۳۰۹۱۹۲۹۷۵
+        <a href="https://instagram.com/amin.salehi.lll" target="_blank">Instagram</a>
+        <a href="https://t.me/amin.salehi.lll" target="_blank">Telegram</a>
+        <a href="https://wa.me/989339291935" target="_blank">WhatsApp</a>
+        <a href="#" target="_blank">LinkedIn</a>
     </div>
-  </section>
+</section>
 
-  <div class="chatbox">
-    <header>پیام مستقیم</header>
-    <div class="messages" id="messages"></div>
-    <div class="input-box">
-      <input type="text" id="msgInput" placeholder="پیام خود را بنویسید...">
-      <button onclick="sendMessage()">ارسال</button>
-    </div>
-  </div>
-
-  <script>
-    const messages = document.getElementById("messages");
-    const input = document.getElementById("msgInput");
-
-    function sendMessage() {
-      if (input.value.trim() !== "") {
-        const msg = document.createElement("div");
-        msg.textContent = "👤 شما: " + input.value;
-        messages.appendChild(msg);
-        input.value = "";
-        messages.scrollTop = messages.scrollHeight;
-      }
-    }
-  </script>
+<footer>
+    <p>&copy; 2025 محمدامین صالحی | تمامی حقوق محفوظ است.</p>
+</footer>
 
 </body>
 </html>
