@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/DrawSVGPlugin.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Vazirmatn', sans-serif; }
         body { background: #f0f2f5; color: #333; scroll-behavior: smooth; overflow-x: hidden; }
@@ -21,38 +20,41 @@
         .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #3498db, #8e44ad); color: white; padding: 0 1rem; }
         .hero img { width: 150px; height: 150px; border-radius: 50%; border: 4px solid #fff; animation: float 3s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-        .hero h1, .hero p { opacity: 0; border-right: 2px solid white; white-space: nowrap; overflow: hidden; }
+        .hero h1, .hero p, section h2, section h3, section p { border-right: 2px solid currentColor; white-space: nowrap; overflow: hidden; width: 0; }
         section { padding: 6rem 2rem 4rem; }
-        section h2 { font-size: 2rem; text-align: center; margin-bottom: 2rem; color: #2c3e50; position: relative; opacity: 0; border-right: 2px solid #333; white-space: nowrap; overflow: hidden; }
+        section h2 { font-size: 2rem; text-align: center; margin-bottom: 2rem; color: #2c3e50; position: relative; }
         section h2::after { content: ''; display: block; width: 60px; height: 4px; background: #3498db; margin: 1rem auto 0; border-radius: 2px; }
-        section p { max-width: 900px; margin: 0 auto 1rem; text-align: center; line-height: 1.8; opacity: 0; border-right: 2px solid #333; white-space: nowrap; overflow: hidden; }
+        section p { max-width: 900px; margin: 0 auto 1rem; text-align: center; line-height: 1.8; }
         .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-        .skill { background: white; border-radius: 10px; padding: 1.5rem; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; cursor: pointer; opacity: 0; }
+        .skill { background: white; border-radius: 10px; padding: 1.5rem; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; }
         .skill:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
         .skill svg { width: 60px; height: 60px; margin-bottom: 1rem; }
-        .contact { text-align: center; opacity: 0; }
+        .contact { text-align: center; }
         .contact a { display: inline-block; margin: 0.5rem; padding: 0.5rem 1rem; background: #3498db; color: white; border-radius: 5px; transition: 0.3s; }
         .contact a:hover { background: #2980b9; }
         footer { background: #2c3e50; color: white; text-align: center; padding: 2rem; }
-        footer a { color: #3498db; margin: 0 0.5rem; }
         .table-container { overflow-x: auto; margin: 2rem auto; }
         table { border-collapse: collapse; width: 100%; max-width: 1000px; margin: 1rem auto; }
         table, th, td { border: 1px solid #ccc; }
         th, td { padding: 0.5rem; text-align: center; }
         th { background: #3498db; color: white; }
         td { background: white; }
-        /* Typing Animation */
-        .typing { animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite; }
+        .typing { animation: typing 2s steps(30, end) forwards, blink-caret 0.75s step-end 3; }
         @keyframes typing { from { width: 0; } to { width: 100%; } }
         @keyframes blink-caret { from, to { border-color: transparent; } 50% { border-color: currentColor; } }
-        /* Responsive */
-        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } section h2 { font-size: 1.5rem; } header .nav-container { flex-direction: column; } header nav ul { flex-direction: column; gap: 0.5rem; } }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            section h2 { font-size: 1.5rem; }
+            header .nav-container { flex-direction: column; gap: 0.5rem; }
+            header nav ul { flex-direction: column; gap: 0.5rem; }
+            .skill svg { width: 50px; height: 50px; }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="nav-container">
-            <h2>محمدامین صالحی</h2>
+            <h2 id="headerTitle">محمدامین صالحی</h2>
             <nav>
                 <ul>
                     <li><a href="#about">درباره من</a></li>
@@ -66,8 +68,8 @@
 
     <section class="hero" id="home">
         <img src="https://avatars.githubusercontent.com/u/96920932?v=4" alt="محمدامین صالحی">
-        <h1 id="heroTitle"></h1>
-        <p id="heroText"></p>
+        <h1 id="heroTitle">محمدامین صالحی – پژوهشگر و طراح چندبعدی</h1>
+        <p id="heroText">دانشجوی ریاضیات و کاربردها، با علاقه و تجربه در برنامه‌نویسی پایتون، طراحی سیستم، ساخت سناریو و فلوچارت، طراحی لوگو و پوستر، و تایپ حرفه‌ای.</p>
     </section>
 
     <section id="about">
@@ -80,33 +82,28 @@
         <div class="skills">
             <div class="skill">
                 <svg viewBox="0 0 64 64" id="pythonSvg">
-                    <path d="M32 0 C10 20,10 44,32 64 C54 44,54 20,32 0" stroke="#3776ab" stroke-width="4" fill="none" stroke-dasharray="200" stroke-dashoffset="200"/>
+                    <path d="M16 48 C24 56, 40 56, 48 48 C56 40, 56 24, 48 16 C40 8, 24 8, 16 16 C8 24, 8 40, 16 48" stroke="#3776ab" stroke-width="4" fill="none" stroke-dasharray="150" stroke-dashoffset="150"/>
                 </svg>
                 <h3 id="pythonTitle">پایتون</h3>
                 <p id="pythonText">برنامه‌نویسی و طراحی سیستم‌ها</p>
             </div>
             <div class="skill">
                 <svg viewBox="0 0 64 64" id="brainSvg">
-                    <path d="M20 20 Q30 10 40 20 Q50 10 60 20 Q50 30 40 20 Q30 30 20 20 Z M25 25 Q35 15 45 25 Q55 15 60 25 Q50 35 40 25 Q30 35 25 25 Z" stroke="#e74c3c" stroke-width="3" fill="none" stroke-dasharray="150" stroke-dashoffset="150">
-                        <animate attributeName="stroke-dashoffset" from="150" to="0" dur="2s" fill="freeze"/>
-                    </path>
-                    <circle cx="32" cy="32" r="2" fill="#e74c3c">
-                        <animate attributeName="r" values="2;4;2" dur="1s" repeatCount="indefinite"/>
-                    </circle>
+                    <path d="M20 20 Q30 10 40 20 Q50 10 60 20 Q50 30 40 20 Q30 30 20 20 Z" stroke="#e74c3c" stroke-width="3" fill="none" stroke-dasharray="100" stroke-dashoffset="100"/>
                 </svg>
                 <h3 id="analysisTitle">تحلیل رفتار</h3>
                 <p id="analysisText">مدل‌سازی و تحلیل سیستم‌های اجتماعی و اقتصادی</p>
             </div>
             <div class="skill">
-                <svg viewBox="0 0 380 50" id="typingSvg" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
-                    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="typing" style="font-family: 'Vazirmatn'; font-size: 12px; fill: #3498db; width: 0; border-right: 2px solid #3498db;">Type</text>
+                <svg viewBox="0 0 100 20" id="typingSvg">
+                    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Vazirmatn" font-size="10" fill="#3498db" class="typing" style="width: 0; border-right: 2px solid #3498db;">Type</text>
                 </svg>
                 <h3 id="typingTitle">تایپ حرفه‌ای</h3>
                 <p id="typingText">تایپ PDF به Word با دقت و قالب‌بندی عالی</p>
             </div>
             <div class="skill">
                 <svg viewBox="0 0 64 64" id="penSvg">
-                    <path d="M10 50 L54 10 M20 40 L40 20" stroke="#2c3e50" stroke-width="4" fill="none" stroke-dasharray="100" stroke-dashoffset="100"/>
+                    <path d="M10 50 L54 10" stroke="#2c3e50" stroke-width="4" fill="none" stroke-dasharray="60" stroke-dashoffset="60"/>
                     <circle cx="54" cy="10" r="3" fill="#2c3e50"/>
                 </svg>
                 <h3 id="designTitle">طراحی لوگو</h3>
@@ -167,7 +164,7 @@
         <h2 id="contactTitle">ارتباط با من</h2>
         <p id="contactEmail">ایمیل: <a href="mailto:amin.salehi.sec@gmail.com">amin.salehi.sec@gmail.com</a></p>
         <p id="contactPhone">شماره تماس: <a href="tel:+989339291935">۰۹۳۳۹۲۹۱۹۳۵</a> | <a href="tel:+989309192975">۰۹۳۰۹۱۹۲۹۷۵</a></p>
-        <div class="contact" id="socialLinks">
+        <div class="contact">
             <a href="https://instagram.com/amin.salehi.lll" target="_blank">Instagram</a>
             <a href="https://t.me/amin.salehi.lll" target="_blank">Telegram</a>
         </div>
@@ -178,49 +175,37 @@
     </footer>
 
     <script>
-        gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
+        gsap.registerPlugin(ScrollTrigger);
 
-        // Hero typing
-        const heroTitle = "محمدامین صالحی – پژوهشگر و طراح چندبعدی";
-        const heroText = "دانشجوی ریاضیات و کاربردها، با علاقه و تجربه در برنامه‌نویسی پایتون، طراحی سیستم، ساخت سناریو و فلوچارت، طراحی لوگو و پوستر، و تایپ حرفه‌ای.";
-        let indexTitle = 0, indexText = 0;
-        function typeTitle() {
-            if (indexTitle < heroTitle.length) {
-                document.getElementById('heroTitle').innerHTML += heroTitle.charAt(indexTitle++);
-                setTimeout(typeTitle, 50);
-            } else { typeText(); }
-        }
-        function typeText() {
-            if (indexText < heroText.length) {
-                document.getElementById('heroText').innerHTML += heroText.charAt(indexText++);
-                setTimeout(typeText, 20);
-            }
-        }
-        typeTitle();
-
-        // Generic typing function
-        function typeElement(elementId, text, speed = 30) {
+        // Simple typing function
+        function typeElement(elementId, speed = 30) {
             const el = document.getElementById(elementId);
-            el.style.opacity = 1;
-            let i = 0;
-            function type() {
-                if (i < text.length) {
-                    el.innerHTML += text.charAt(i++);
-                    setTimeout(type, speed);
-                } else {
+            const text = el.textContent || el.innerHTML;
+            el.textContent = '';
+            el.style.width = 'auto';
+            gsap.to(el, {
+                width: '100%',
+                duration: text.length * speed / 1000,
+                ease: 'steps(' + text.length + ')',
+                onStart: () => el.classList.add('typing'),
+                onComplete: () => {
                     el.style.borderRight = 'none';
+                    el.classList.remove('typing');
                 }
-            }
-            type();
+            });
         }
 
-        // Scroll-triggered typing and animations
+        // Hero section
+        typeElement('heroTitle', 50);
+        setTimeout(() => typeElement('heroText', 20), 1500);
+
+        // Scroll-triggered animations
         ScrollTrigger.create({
             trigger: "#about",
             start: "top 80%",
             onEnter: () => {
-                typeElement('aboutTitle', 'درباره من');
-                setTimeout(() => typeElement('aboutText', document.getElementById('aboutText').textContent, 20), 1000);
+                typeElement('aboutTitle');
+                setTimeout(() => typeElement('aboutText', 20), 800);
             }
         });
 
@@ -228,23 +213,24 @@
             trigger: "#skills",
             start: "top 80%",
             onEnter: () => {
-                typeElement('skillsTitle', 'مهارت‌ها');
+                typeElement('skillsTitle');
                 gsap.from(".skill", { opacity: 0, y: 50, duration: 1, stagger: 0.2 });
-                // Animate SVGs on enter
-                gsap.from("#pythonSvg path", { drawSVG: "0%", duration: 2, ease: "power2.inOut" });
-                gsap.from("#brainSvg path", { drawSVG: "0%", duration: 2, ease: "power2.inOut" });
-                gsap.to("#typingSvg text", { width: "100%", duration: 3, ease: "power2.inOut", repeat: -1, yoyo: true });
-                gsap.from("#penSvg path", { drawSVG: "0%", duration: 2, ease: "power2.inOut" });
-                // Type skill texts after SVG anim
+                gsap.to("#pythonSvg path", { strokeDashoffset: 0, duration: 2 });
+                gsap.to("#brainSvg path", { strokeDashoffset: 0, duration: 2 });
+                gsap.to("#typingSvg text", {
+                    width: "100%", duration: 2, ease: "steps(4)",
+                    onComplete: () => gsap.to("#typingSvg text", { width: "0%", duration: 1, delay: 1 })
+                });
+                gsap.to("#penSvg path", { strokeDashoffset: 0, duration: 2 });
                 setTimeout(() => {
-                    typeElement('pythonTitle', 'پایتون');
-                    typeElement('pythonText', 'برنامه‌نویسی و طراحی سیستم‌ها', 15);
-                    typeElement('analysisTitle', 'تحلیل رفتار');
-                    typeElement('analysisText', 'مدل‌سازی و تحلیل سیستم‌های اجتماعی و اقتصادی', 15);
-                    typeElement('typingTitle', 'تایپ حرفه‌ای');
-                    typeElement('typingText', 'تایپ PDF به Word با دقت و قالب‌بندی عالی', 15);
-                    typeElement('designTitle', 'طراحی لوگو');
-                    typeElement('designText', 'ایجاد لوگو و پوستر با SVG انیمیشنی', 15);
+                    typeElement('pythonTitle');
+                    typeElement('pythonText', 15);
+                    typeElement('analysisTitle');
+                    typeElement('analysisText', 15);
+                    typeElement('typingTitle');
+                    typeElement('typingText', 15);
+                    typeElement('designTitle');
+                    typeElement('designText', 15);
                 }, 1500);
             }
         });
@@ -253,41 +239,41 @@
             trigger: "#arkhavia",
             start: "top 80%",
             onEnter: () => {
-                typeElement('arkhaviaTitle', '🌟 معرفی آرکاویا برای مشتری');
+                typeElement('arkhaviaTitle');
                 setTimeout(() => {
-                    typeElement('arkhaviaIntro', 'آرکاویا – Civilization of Rooted Awakening');
-                    typeElement('arkhaviaDesc', 'آرکاویا یک سیستم مالی و اجتماعی نوآورانه است که بر پایه اعتماد اجتماعی و شفافیت کامل ساخته شده است. این سیستم ترکیبی از فناوری بلاکچین، اقتصاد رفتاری، نظریه بازی‌ها و طراحی تجربه کاربری هوشمند است تا کاربران بتوانند در یک محیط امن، شفاف و پایدار، اعتبار کسب کنند، وام دریافت کنند و با مشارکت در جامعه، ارزش خود و شبکه را افزایش دهند.', 10);
-                    typeElement('principlesTitle', '۱️⃣ اصول بنیادین آرکاویا');
-                    typeElement('trustSocial', 'اعتماد اجتماعی به عنوان دارایی اصلی');
-                    typeElement('creditGain', 'کاربران با رفتار مسئولانه، مشارکت در تراکنش‌ها و رعایت قوانین سیستم، «اعتبار اجتماعی» کسب می‌کنند.');
-                    typeElement('accessLevel', 'اعتبار اجتماعی تعیین‌کننده میزان دسترسی به وام‌ها، جوایز و فرصت‌های ویژه است.');
-                    typeElement('transparency', 'شفافیت کامل و غیرقابل دستکاری');
-                    typeElement('transactionLog', 'هر تراکنش، اعتبار و تعامل روی بلاکچین ثبت می‌شود.');
-                    typeElement('historyView', 'هر کسی می‌تواند تاریخچه تراکنش‌ها و امتیازات کاربران را مشاهده کند، بدون اینکه حریم خصوصی واقعی نقض شود.');
-                    typeElement('incentives', 'مشوق‌های هوشمند و بازی‌وارسازی (Gamification)');
-                    typeElement('mechanisms', 'سیستم قرعه‌کشی، جوایز وام، decay function و رتبه‌بندی اعتباری باعث می‌شود کاربران به رفتار مسئولانه تشویق شوند.');
-                    typeElement('gameTheory', 'مکانیزم‌ها بر اساس نظریه بازی‌ها و اقتصاد رفتاری طراحی شده‌اند.');
-                    typeElement('decentralization', 'تمرکززدایی و امنیت بالا');
-                    typeElement('blockchainUse', 'استفاده از بلاکچین برای قراردادهای هوشمند و ذخیره داده‌های حساس.');
-                    typeElement('security', 'سیستم مقاوم در برابر دستکاری، تقلب و تراکنش‌های ناامن.');
-                    typeElement('featuresTitle', '۲️⃣ ویژگی‌های کلیدی');
-                    typeElement('techTitle', '۳️⃣ فناوری‌های استفاده شده');
-                    typeElement('techBackend', 'Backend: Python + FastAPI + PostgreSQL');
-                    typeElement('techFrontend', 'Frontend: React + Tailwind + Figma');
-                    typeElement('techBlockchain', 'Blockchain: Solidity + Ethereum/EVM + Chainlink');
-                    typeElement('techSecurity', 'Security: JWT/OAuth2, رمزنگاری AES/RSA, تست نفوذ با BurpSuite/Kali');
-                    typeElement('techAnalytics', 'Analytics: Python (pandas, NetworkX, Mesa), R برای اقتصاد رفتاری');
-                    typeElement('benefitsTitle', '۴️⃣ مزایای اصلی برای مشتری');
-                    typeElement('benefitTrust', 'اعتماد و شفافیت → هر تراکنش قابل بررسی است.');
-                    typeElement('benefitEncourage', 'تشویق به رفتار مسئولانه → کاربران با عملکرد خوب پاداش می‌گیرند.');
-                    typeElement('benefitLoan', 'دسترسی به وام منصفانه و بدون بهره → سیستم بر اساس رتبه اعتباری کار می‌کند.');
-                    typeElement('benefitSecurity', 'امنیت و پایداری بالا → جلوگیری از کلاه‌برداری و تقلب.');
-                    typeElement('benefitScale', 'مقیاس‌پذیری و رشد پایدار → طراحی شده برای میلیون‌ها کاربر.');
-                    typeElement('visionTitle', '۵️⃣ چشم‌انداز');
-                    typeElement('visionDesc', 'آرکاویا فراتر از یک سیستم مالی است؛ این یک تمدن دیجیتال مبتنی بر اعتماد و شفافیت است. کاربران نه فقط منابع مالی، بلکه اعتماد، مسئولیت و اعتبار اجتماعی کسب می‌کنند و بخشی از یک شبکه پایدار و پویا می‌شوند که به صورت دائمی رشد و تکامل می‌یابد.');
-                    typeElement('arkhaviaExtra', 'آرکاویا، چیزی فراتر از یک سیستم مالی است. این یک تمدن اعتباری بر پایه‌ی اعتماد اجتماعی است؛ جایی که هر عمل درست و هر رفتار مسئولانه، نه تنها بازتابی از شخصیت توست، بلکه مستقیماً به قدرت مالی و اجتماعی‌ات تبدیل می‌شود. در آرکاویا، اعتماد، سرمایه است؛ کاربران با شفافیت و صداقت، امتیاز کسب می‌کنند، و این امتیازها ارزش واقعی دارند و در شبکه گردش می‌کنند.');
-                    typeElement('arkhaviaPhoenix', 'سیستم با قوانین بازی‌شده و مکانیزم‌های روان‌شناختی طراحی شده تا همگان مسئولیت‌پذیری و همکاری را تجربه کنند؛ کسانی که وفادار و منظم هستند، رشد می‌کنند و کسانی که کوتاهی می‌کنند، پیامدهایش را مستقیم می‌بینند. آرکاویا ترکیبی است از اقتصاد، اخلاق و بازی‌سازی اجتماعی، با چشم‌انداز تمدنی: ایجاد یک جامعه‌ای که در آن اعتماد، پول و قدرت هم‌پوشانی پیدا می‌کنند و رفتار درست، بالاترین پاداش را می‌گیرد.');
-                    typeElement('arkhaviaRebirth', 'و از همه مهم‌تر، آرکاویا یک فضای تولد دوباره برای کاربران است؛ جایی که شکست و خطا، نه پایان، بلکه درس و مسیر ارتقاء است. مثل ققنوس، هر عمل درست می‌تواند تو را به اوج بازگرداند، و هر اشتباه فرصتی برای بازسازی اعتماد و اعتبار می‌شود.');
+                    typeElement('arkhaviaIntro', 20);
+                    typeElement('arkhaviaDesc', 15);
+                    typeElement('principlesTitle');
+                    typeElement('trustSocial', 15);
+                    typeElement('creditGain', 15);
+                    typeElement('accessLevel', 15);
+                    typeElement('transparency', 15);
+                    typeElement('transactionLog', 15);
+                    typeElement('historyView', 15);
+                    typeElement('incentives', 15);
+                    typeElement('mechanisms', 15);
+                    typeElement('gameTheory', 15);
+                    typeElement('decentralization', 15);
+                    typeElement('blockchainUse', 15);
+                    typeElement('security', 15);
+                    typeElement('featuresTitle');
+                    typeElement('techTitle');
+                    typeElement('techBackend', 15);
+                    typeElement('techFrontend', 15);
+                    typeElement('techBlockchain', 15);
+                    typeElement('techSecurity', 15);
+                    typeElement('techAnalytics', 15);
+                    typeElement('benefitsTitle');
+                    typeElement('benefitTrust', 15);
+                    typeElement('benefitEncourage', 15);
+                    typeElement('benefitLoan', 15);
+                    typeElement('benefitSecurity', 15);
+                    typeElement('benefitScale', 15);
+                    typeElement('visionTitle');
+                    typeElement('visionDesc', 15);
+                    typeElement('arkhaviaExtra', 15);
+                    typeElement('arkhaviaPhoenix', 15);
+                    typeElement('arkhaviaRebirth', 15);
                 }, 1000);
             }
         });
@@ -296,12 +282,11 @@
             trigger: "#contact",
             start: "top 80%",
             onEnter: () => {
-                typeElement('contactTitle', 'ارتباط با من');
+                typeElement('contactTitle');
                 setTimeout(() => {
-                    typeElement('contactEmail', 'ایمیل: <a href="mailto:amin.salehi.sec@gmail.com">amin.salehi.sec@gmail.com</a>');
-                    typeElement('contactPhone', 'شماره تماس: <a href="tel:+989339291935">۰۹۳۳۹۲۹۱۹۳۵</a> | <a href="tel:+989309192975">۰۹۳۰۹۱۹۲۹۷۵</a>');
-                }, 1000);
-                setTimeout(() => gsap.to("#socialLinks", { opacity: 1, duration: 1 }), 2000);
+                    typeElement('contactEmail', 15);
+                    typeElement('contactPhone', 15);
+                }, 800);
             }
         });
     </script>
