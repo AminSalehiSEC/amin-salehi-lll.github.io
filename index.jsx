@@ -1,198 +1,165 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { Mail, Phone, Instagram, Send, Github, MessageCircle } from "lucide-react";
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محمدامین صالحی | معرفی</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Tahoma', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 3rem 1rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+      animation: float 4s ease-in-out infinite;
+    }
+    header h1 {
+      margin-top: 1rem;
+      font-size: 2rem;
+    }
+    header p {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+    section {
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    .links a {
+      display: inline-block;
+      margin: 1rem;
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #fff;
+      background: #e94560;
+      transition: transform 0.3s;
+    }
+    .links a:hover {
+      transform: scale(1.1);
+      background: #ff2e63;
+    }
+    .contact {
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 1rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+    /* Chat Box */
+    .chatbox {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      background: #fff;
+      color: #000;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    .chatbox header {
+      background: #0f3460;
+      color: #fff;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+    .messages {
+      max-height: 200px;
+      overflow-y: auto;
+      padding: 0.5rem;
+      text-align: left;
+      font-size: 0.85rem;
+    }
+    .input-box {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+    .input-box input {
+      flex: 1;
+      border: none;
+      padding: 0.5rem;
+    }
+    .input-box button {
+      background: #e94560;
+      border: none;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
 
-export default function Portfolio() {
-  const [showChat, setShowChat] = useState(false);
-  const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState("");
+  <header>
+    <img src="https://avatars.githubusercontent.com/u/149763325?v=4" alt="Profile">
+    <h1>محمدامین صالحی</h1>
+    <p>پژوهشگر، طراح و تحلیلگر چندبعدی</p>
+  </header>
 
-  const handleSend = () => {
-    if (!input.trim()) return;
-    setMessages([...messages, { text: input, from: "user" }]);
-    setInput("");
-  };
+  <section>
+    <h2>درباره من</h2>
+    <p>
+      دانشجوی ریاضیات و کاربردها، دانشگاه شهید بهشتی تهران.  
+      علاقه‌مند به برنامه‌نویسی پایتون، طراحی سیستم، سناریو و فلوچارت، طراحی لوگو و پوستر، و تایپ حرفه‌ای.  
+      فعالیت‌هایم در حوزه‌های فلسفه، روانشناسی، تحلیل رفتار متقابل، مهندسی شرایط و اجتماعی و نویسندگی متون کوتاه متمرکز است.
+    </p>
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white font-sans">
-      {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center h-screen text-center px-4">
-        <motion.img
-          src="https://avatars.githubusercontent.com/u/182611210?v=4"
-          alt="Amin Salehi"
-          className="w-40 h-40 rounded-full shadow-2xl border-4 border-purple-500 mb-6"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1 }}
-        />
-        <motion.h1
-          className="text-4xl md:text-6xl font-bold mb-4"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          محمدامین صالحی
-        </motion.h1>
-        <p className="text-lg md:text-2xl text-gray-300 max-w-2xl">
-          پژوهشگر، طراح و تحلیلگر چندبعدی | دانشجوی ریاضیات و کاربردها، دانشگاه شهید بهشتی
-        </p>
-        <div className="flex gap-6 mt-8">
-          <a href="https://t.me/amin.salehi.lll" target="_blank" className="hover:text-purple-400"><MessageCircle size={30} /></a>
-          <a href="https://instagram.com/amin.salehi.lll" target="_blank" className="hover:text-pink-400"><Instagram size={30} /></a>
-          <a href="mailto:amin.salehi.sec@gmail.com" className="hover:text-red-400"><Mail size={30} /></a>
-          <a href="tel:+989339291935" className="hover:text-green-400"><Phone size={30} /></a>
-          <a href="https://github.com/aminsalehisec" target="_blank" className="hover:text-gray-400"><Github size={30} /></a>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="px-6 py-20 bg-black bg-opacity-40 backdrop-blur-lg">
-        <h2 className="text-3xl font-bold mb-6 text-center">درباره من</h2>
-        <p className="text-gray-300 max-w-3xl mx-auto leading-relaxed text-center">
-          من در زمینه‌های برنامه‌نویسی پایتون، طراحی سیستم، ساخت سناریو و فلوچارت، طراحی لوگو و پوستر، و تایپ حرفه‌ای تخصص دارم.
-          علاقه‌مند به پژوهش در فلسفه، روانشناسی، تحلیل رفتار متقابل، مهندسی شرایط و مهندسی اجتماعی، و نویسندگی متون کوتاه فلسفی، عرفانی و جامعه‌شناسی.
-          دقیق، متعهد و علاقه‌مند به مدیریت پروژه و تحلیل رفتارهای اجتماعی و اقتصادی برای خلق راهکارهای نوآورانه.
-        </p>
-      </section>
-
-      {/* Floating Chat Button */}
-      <button
-        onClick={() => setShowChat(!showChat)}
-        className="fixed bottom-6 right-6 bg-purple-600 hover:bg-purple-700 p-4 rounded-full shadow-lg"
-      >
-        <Send size={24} />
-      </button>
-
-      {/* Chat Box */}
-      {showChat && (
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="fixed bottom-20 right-6 w-80 bg-gray-900 rounded-2xl shadow-2xl border border-purple-700 flex flex-col"
-        >
-          <div className="p-3 border-b border-purple-700 text-center font-bold bg-purple-800 rounded-t-2xl">
-            پیام مستقیم
-          </div>
-          <div className="flex-1 p-3 space-y-2 overflow-y-auto max-h-60">
-            {messages.map((msg, i) => (
-              <div key={i} className={`p-2 rounded-lg max-w-[80%] ${msg.from === "user" ? "bg-purple-600 ml-auto" : "bg-gray-700"}`}>
-                {msg.text}
-              </div>
-            ))}
-          </div>
-          <div className="flex p-2 border-t border-purple-700">
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="پیام خود را بنویسید..."
-              className="flex-1 px-3 py-2 rounded-lg bg-gray-800 text-white focus:outline-none"
-            />
-            <button onClick={handleSend} className="ml-2 bg-purple-600 hover:bg-purple-700 p-2 rounded-lg">
-              <Send size={20} />
-            </button>
-          </div>
-        </motion.div>
-      )}
+    <div class="links">
+      <a href="https://t.me/amin.salehi.lll" target="_blank">تلگرام</a>
+      <a href="https://instagram.com/amin.salehi.lll" target="_blank">اینستاگرام</a>
     </div>
-  );
-}
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { Mail, Phone, Instagram, Send, Github, MessageCircle } from "lucide-react";
 
-export default function Portfolio() {
-  const [showChat, setShowChat] = useState(false);
-  const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState("");
-
-  const handleSend = () => {
-    if (!input.trim()) return;
-    setMessages([...messages, { text: input, from: "user" }]);
-    setInput("");
-  };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white font-sans">
-      {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center h-screen text-center px-4">
-        <motion.img
-          src="https://avatars.githubusercontent.com/u/182611210?v=4"
-          alt="Amin Salehi"
-          className="w-40 h-40 rounded-full shadow-2xl border-4 border-purple-500 mb-6"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1 }}
-        />
-        <motion.h1
-          className="text-4xl md:text-6xl font-bold mb-4"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          محمدامین صالحی
-        </motion.h1>
-        <p className="text-lg md:text-2xl text-gray-300 max-w-2xl">
-          پژوهشگر، طراح و تحلیلگر چندبعدی | دانشجوی ریاضیات و کاربردها، دانشگاه شهید بهشتی
-        </p>
-        <div className="flex gap-6 mt-8">
-          <a href="https://t.me/amin.salehi.lll" target="_blank" className="hover:text-purple-400"><MessageCircle size={30} /></a>
-          <a href="https://instagram.com/amin.salehi.lll" target="_blank" className="hover:text-pink-400"><Instagram size={30} /></a>
-          <a href="mailto:amin.salehi.sec@gmail.com" className="hover:text-red-400"><Mail size={30} /></a>
-          <a href="tel:+989339291935" className="hover:text-green-400"><Phone size={30} /></a>
-          <a href="https://github.com/aminsalehisec" target="_blank" className="hover:text-gray-400"><Github size={30} /></a>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="px-6 py-20 bg-black bg-opacity-40 backdrop-blur-lg">
-        <h2 className="text-3xl font-bold mb-6 text-center">درباره من</h2>
-        <p className="text-gray-300 max-w-3xl mx-auto leading-relaxed text-center">
-          من در زمینه‌های برنامه‌نویسی پایتون، طراحی سیستم، ساخت سناریو و فلوچارت، طراحی لوگو و پوستر، و تایپ حرفه‌ای تخصص دارم.
-          علاقه‌مند به پژوهش در فلسفه، روانشناسی، تحلیل رفتار متقابل، مهندسی شرایط و مهندسی اجتماعی، و نویسندگی متون کوتاه فلسفی، عرفانی و جامعه‌شناسی.
-          دقیق، متعهد و علاقه‌مند به مدیریت پروژه و تحلیل رفتارهای اجتماعی و اقتصادی برای خلق راهکارهای نوآورانه.
-        </p>
-      </section>
-
-      {/* Floating Chat Button */}
-      <button
-        onClick={() => setShowChat(!showChat)}
-        className="fixed bottom-6 right-6 bg-purple-600 hover:bg-purple-700 p-4 rounded-full shadow-lg"
-      >
-        <Send size={24} />
-      </button>
-
-      {/* Chat Box */}
-      {showChat && (
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="fixed bottom-20 right-6 w-80 bg-gray-900 rounded-2xl shadow-2xl border border-purple-700 flex flex-col"
-        >
-          <div className="p-3 border-b border-purple-700 text-center font-bold bg-purple-800 rounded-t-2xl">
-            پیام مستقیم
-          </div>
-          <div className="flex-1 p-3 space-y-2 overflow-y-auto max-h-60">
-            {messages.map((msg, i) => (
-              <div key={i} className={`p-2 rounded-lg max-w-[80%] ${msg.from === "user" ? "bg-purple-600 ml-auto" : "bg-gray-700"}`}>
-                {msg.text}
-              </div>
-            ))}
-          </div>
-          <div className="flex p-2 border-t border-purple-700">
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="پیام خود را بنویسید..."
-              className="flex-1 px-3 py-2 rounded-lg bg-gray-800 text-white focus:outline-none"
-            />
-            <button onClick={handleSend} className="ml-2 bg-purple-600 hover:bg-purple-700 p-2 rounded-lg">
-              <Send size={20} />
-            </button>
-          </div>
-        </motion.div>
-      )}
+    <div class="contact">
+      📧 ایمیل: amin.salehi.sec@gmail.com <br>
+      📞 تماس: ۰۹۳۳۹۲۹۱۹۳۵ | ۰۹۳۰۹۱۹۲۹۷۵
     </div>
-  );
-}
+  </section>
+
+  <div class="chatbox">
+    <header>پیام مستقیم</header>
+    <div class="messages" id="messages"></div>
+    <div class="input-box">
+      <input type="text" id="msgInput" placeholder="پیام خود را بنویسید...">
+      <button onclick="sendMessage()">ارسال</button>
+    </div>
+  </div>
+
+  <script>
+    const messages = document.getElementById("messages");
+    const input = document.getElementById("msgInput");
+
+    function sendMessage() {
+      if (input.value.trim() !== "") {
+        const msg = document.createElement("div");
+        msg.textContent = "👤 شما: " + input.value;
+        messages.appendChild(msg);
+        input.value = "";
+        messages.scrollTop = messages.scrollHeight;
+      }
+    }
+  </script>
+
+</body>
+</html>
