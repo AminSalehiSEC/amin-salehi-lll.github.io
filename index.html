@@ -22,13 +22,7 @@ section {padding:6rem 2rem 4rem;}
 section h2 {font-size:2rem; text-align:center; margin-bottom:2rem; color:#2c3e50; position:relative;}
 section h2::after {content:''; display:block; width:60px; height:4px; background:#3498db; margin:1rem auto 0; border-radius:2px;}
 section p {max-width:900px; margin:0 auto 1rem; text-align:center; line-height:1.8;}
-
-/* تغییر مهم برای حفظ فاصله در انیمیشن تایپ */
-#heroTitle, #heroText, #aboutTitle, #aboutText, .skill h3, .skill p {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-
+#heroTitle, #heroText, #aboutTitle, #aboutText, .skill h3, .skill p {white-space: pre-wrap; word-wrap: break-word;}
 .skills {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2rem; max-width:1200px; margin:0 auto;}
 .skill {background:white; border-radius:10px; padding:1.5rem; text-align:center; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:0.3s; opacity: 0; transform: translateY(20px);}
 .skill.is-visible {opacity: 1; transform: translateY(0); transition: opacity 0.6s ease-out, transform 0.6s ease-out;}
@@ -75,11 +69,13 @@ footer {background:#2c3e50; color:white; text-align:center; padding:2rem;}
 <h3 id="skillTitle1">پایتون</h3>
 <p id="skillText1">برنامه‌نویسی و طراحی سیستم‌ها</p>
 </div>
+
 <div class="skill">
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Gnome-emblem-brain.svg" alt="Brain Logo">
+<img src="https://i.imgur.com/gK6n9oF.png" alt="لوگوی تحلیل رفتار">
 <h3 id="skillTitle2">تحلیل رفتار</h3>
 <p id="skillText2">مدل‌سازی و تحلیل سیستم‌های اجتماعی و اقتصادی</p>
 </div>
+
 <div class="skill">
 <img src="https://cdn-icons-png.flaticon.com/512/1828/1828490.png" alt="Typing Logo">
 <h3 id="skillTitle3">تایپ حرفه‌ای</h3>
@@ -123,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     gsap.registerPlugin(ScrollTrigger);
 
-    const animatedElements = new Set(); // برای جلوگیری از اجرای چندباره انیمیشن
+    const animatedElements = new Set(); 
 
     function typeText(element, speed = 50, callback) {
         if (!element || animatedElements.has(element.id)) return;
@@ -143,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, speed);
     }
 
-    // انیمیشن بخش Hero
     ScrollTrigger.create({
         trigger: "#home",
         start: "top 70%",
@@ -155,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // انیمیشن بخش About
     ScrollTrigger.create({
         trigger: "#about",
         start: "top 70%",
@@ -167,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // انیمیشن بخش Skills
     const skills = document.querySelectorAll('.skill');
     skills.forEach((skill, index) => {
         ScrollTrigger.create({
@@ -179,12 +172,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 const title = skill.querySelector('h3');
                 const paragraph = skill.querySelector('p');
                 
-                // اجرای انیمیشن تایپ با تاخیر برای هر کارت
                 setTimeout(() => {
                     typeText(title, 50, () => {
                         typeText(paragraph, 30);
                     });
-                }, index * 200); // تاخیر پلکانی برای نمایش جذاب‌تر
+                }, index * 200); 
             }
         });
     });
