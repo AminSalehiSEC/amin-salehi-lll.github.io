@@ -34,6 +34,12 @@ section h2::after {content:'';display:block;width:60px;height:4px;background:#34
 .contact a:hover {background:#2980b9;}
 footer {background:#2c3e50;color:white;text-align:center;padding:2rem;}
 footer a {color:#3498db;margin:0 0.5rem;}
+.table-container {overflow-x:auto;}
+table {border-collapse:collapse;width:100%;max-width:1000px;margin:1rem auto;}
+table, th, td {border:1px solid #ccc;}
+th, td {padding:0.5rem;text-align:center;}
+th {background:#3498db;color:white;}
+td {background:white;}
 </style>
 </head>
 <body>
@@ -45,7 +51,7 @@ footer a {color:#3498db;margin:0 0.5rem;}
             <ul>
                 <li><a href="#about">درباره من</a></li>
                 <li><a href="#skills">مهارت‌ها</a></li>
-                <li><a href="#projects">پروژه‌ها</a></li>
+                <li><a href="#arkhavia">آرکاویا</a></li>
                 <li><a href="#contact">ارتباط</a></li>
             </ul>
         </nav>
@@ -66,22 +72,22 @@ footer a {color:#3498db;margin:0 0.5rem;}
 <section id="skills">
     <h2>مهارت‌ها</h2>
     <div class="skills">
-        <div class="skill" id="skillPython">
+        <div class="skill">
             <svg viewBox="0 0 64 64"><path d="M32 0 L64 64 H0 Z"/></svg>
             <h3>پایتون</h3>
             <p>برنامه‌نویسی و طراحی سیستم‌ها</p>
         </div>
-        <div class="skill" id="skillBrain">
+        <div class="skill">
             <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg>
             <h3>تحلیل رفتار</h3>
             <p>مدل‌سازی و تحلیل سیستم‌های اجتماعی و اقتصادی</p>
         </div>
-        <div class="skill" id="skillTyping">
+        <div class="skill">
             <svg viewBox="0 0 64 64"><rect x="10" y="10" width="44" height="44"/></svg>
             <h3>تایپ حرفه‌ای</h3>
             <p>تایپ PDF به Word با دقت و قالب‌بندی عالی</p>
         </div>
-        <div class="skill" id="skillLogo">
+        <div class="skill">
             <svg viewBox="0 0 64 64"><polygon points="32,0 64,64 0,64"/></svg>
             <h3>طراحی لوگو</h3>
             <p>ایجاد لوگو و پوستر با SVG انیمیشنی</p>
@@ -89,9 +95,21 @@ footer a {color:#3498db;margin:0 0.5rem;}
     </div>
 </section>
 
-<section id="projects">
-    <h2>پروژه‌ها و آرکاویا</h2>
-    <p style="max-width:800px;margin:0 auto;text-align:center;">در حال حاضر به عنوان طراح استارتاپ <strong>آرکاویا</strong> فعالیت می‌کنم. پروژه در دست توسعه است و شامل سیستم‌های نوآورانه، تحلیل رفتار و طراحی تجربه کاربری چندبعدی خواهد بود.</p>
+<section id="arkhavia">
+    <h2>آرکاویا – Civilization of Rooted Awakening</h2>
+    <p style="max-width:900px;margin:0 auto;text-align:center;line-height:1.8;">آرکاویا یک سیستم مالی و اجتماعی نوآورانه است که بر پایه اعتماد اجتماعی و شفافیت کامل ساخته شده است. کاربران می‌توانند اعتبار کسب کنند، وام دریافت کنند و ارزش شبکه را افزایش دهند.</p>
+    <div class="table-container">
+    <table>
+        <tr><th>ویژگی</th><th>توضیح</th></tr>
+        <tr><td>سیستم اعتبار اجتماعی (C)</td><td>کاربران با فعالیت‌های واقعی و پاسخگویی به وام‌ها، امتیاز می‌گیرند.</td></tr>
+        <tr><td>قرعه‌کشی و مشوق‌ها</td><td>کاربران جدید یا کم‌اعتبار از طریق قرعه‌کشی دسترسی به وام پیدا می‌کنند.</td></tr>
+        <tr><td>وام بدون بهره</td><td>سیستم به جای بهره، رفتار مسئولانه را افزایش می‌دهد.</td></tr>
+        <tr><td>شفافیت تراکنش‌ها</td><td>هر تراکنش، وام، و رتبه اعتباری روی بلاکچین ثبت می‌شود.</td></tr>
+        <tr><td>قابل توسعه و مقیاس‌پذیر</td><td>طراحی ماژولار و معماری microservices اجازه می‌دهد سیستم با افزایش کاربران رشد کند.</td></tr>
+        <tr><td>امنیت و احراز هویت</td><td>احراز هویت امن با JWT/OAuth2 و مدیریت هویت دیجیتال.</td></tr>
+    </table>
+    </div>
+    <p style="max-width:900px;margin:2rem auto;text-align:center;line-height:1.8;"><strong>چشم‌انداز:</strong> آرکاویا فراتر از یک سیستم مالی است؛ کاربران منابع مالی، اعتماد و اعتبار اجتماعی کسب می‌کنند و بخشی از یک شبکه پایدار و پویا می‌شوند.</p>
 </section>
 
 <section id="contact">
@@ -101,7 +119,164 @@ footer a {color:#3498db;margin:0 0.5rem;}
     <div class="contact">
         <a href="https://instagram.com/amin.salehi.lll" target="_blank">Instagram</a>
         <a href="https://t.me/amin.salehi.lll" target="_blank">Telegram</a>
-        <a href="https://wa.me/989339291935" target="_blank">WhatsApp</a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 محمدامین صالحی | تمامی حقوق محفوظ است.</p>
+</footer>
+
+<script>
+// Hero typing effect
+const heroTitle = "محمدامین صالحی – پژوهشگر و طراح چندبعدی";
+const heroText = "دانشجوی ریاضیات و کاربردها، با علاقه و تجربه در برنامه‌نویسی پایتون، طراحی سیستم، ساخت سناریو و فلوچارت، طراحی لوگو و پوستر، و تایپ حرفه‌ای.";
+let indexTitle = 0, indexText=0;
+
+function typeTitle() {
+    if(indexTitle < heroTitle.length){
+        document.getElementById('heroTitle').innerHTML += heroTitle.charAt(indexTitle);
+        indexTitle++;
+        setTimeout(typeTitle,50);
+    }else{ typeText();}
+}
+
+function typeText(){
+    if(indexText < heroText.length){
+        document.getElementById('heroText').innerHTML += heroText.charAt(indexText);
+        indexText++;
+        setTimeout(typeText,20);
+    }
+}
+
+// GSAP animations
+gsap.from("section h2", {scrollTrigger:{trigger:"section", start:"top 80%"}, opacity:0, y:50, duration:1, stagger:0.2});
+gsap.from(".skill", {scrollTrigger:{trigger:"#skills", start:"top 80%"}, opacity:0, y:50, duration:1, stagger:0.2});
+
+typeTitle();
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محمدامین صالحی – پژوهشگر و طراح</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/ScrollTrigger.min.js"></script>
+<style>
+* {margin:0;padding:0;box-sizing:border-box;font-family:'Vazirmatn',sans-serif;}
+body {background:#f0f2f5;color:#333;scroll-behavior:smooth;}
+a {text-decoration:none;color:inherit;}
+header {position:fixed;top:0;width:100%;background:#2c3e50;color:white;z-index:1000;}
+header .nav-container {display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;}
+header nav ul {display:flex;list-style:none;}
+header nav ul li {margin:0 1rem;}
+header nav ul li a {color:white;font-weight:700;transition:0.3s;}
+header nav ul li a:hover {color:#3498db;}
+.hero {height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(135deg,#3498db,#8e44ad);color:white;padding:0 1rem;}
+.hero img {width:150px;height:150px;border-radius:50%;border:4px solid #fff;animation: float 3s ease-in-out infinite;}
+@keyframes float {0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);}}
+.hero h1 {font-size:3rem;margin:1rem 0;opacity:0;}
+.hero p {font-size:1.2rem;max-width:600px;opacity:0;}
+section {padding:6rem 2rem 4rem;}
+section h2 {font-size:2rem;text-align:center;margin-bottom:2rem;color:#2c3e50;position:relative;opacity:0;}
+section h2::after {content:'';display:block;width:60px;height:4px;background:#3498db;margin:1rem auto 0;border-radius:2px;}
+.skills {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;max-width:1200px;margin:0 auto;}
+.skill {background:white;border-radius:10px;padding:1.5rem;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:0.3s;cursor:pointer;opacity:0;}
+.skill:hover {transform:translateY(-10px);box-shadow:0 10px 25px rgba(0,0,0,0.2);}
+.skill svg {width:60px;height:60px;margin-bottom:1rem;fill:#3498db;}
+.contact {text-align:center;opacity:0;}
+.contact a {display:inline-block;margin:0.5rem;padding:0.5rem 1rem;background:#3498db;color:white;border-radius:5px;transition:0.3s;}
+.contact a:hover {background:#2980b9;}
+footer {background:#2c3e50;color:white;text-align:center;padding:2rem;}
+footer a {color:#3498db;margin:0 0.5rem;}
+.table-container {overflow-x:auto;}
+table {border-collapse:collapse;width:100%;max-width:1000px;margin:1rem auto;}
+table, th, td {border:1px solid #ccc;}
+th, td {padding:0.5rem;text-align:center;}
+th {background:#3498db;color:white;}
+td {background:white;}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <h2>محمدامین صالحی</h2>
+        <nav>
+            <ul>
+                <li><a href="#about">درباره من</a></li>
+                <li><a href="#skills">مهارت‌ها</a></li>
+                <li><a href="#arkhavia">آرکاویا</a></li>
+                <li><a href="#contact">ارتباط</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero" id="home">
+    <img src="https://avatars.githubusercontent.com/u/96920932?v=4" alt="محمدامین صالحی">
+    <h1 id="heroTitle"></h1>
+    <p id="heroText"></p>
+</section>
+
+<section id="about">
+    <h2>درباره من</h2>
+    <p style="max-width:800px;margin:0 auto;text-align:center;line-height:1.8;">دانشجوی ریاضیات و کاربردها، با تجربه در پایتون، طراحی سیستم، ساخت سناریو و فلوچارت، طراحی لوگو و پوستر، تایپ حرفه‌ای و پژوهش در حوزه‌های فلسفه، روانشناسی و مهندسی اجتماعی.</p>
+</section>
+
+<section id="skills">
+    <h2>مهارت‌ها</h2>
+    <div class="skills">
+        <div class="skill">
+            <svg viewBox="0 0 64 64"><path d="M32 0 L64 64 H0 Z"/></svg>
+            <h3>پایتون</h3>
+            <p>برنامه‌نویسی و طراحی سیستم‌ها</p>
+        </div>
+        <div class="skill">
+            <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg>
+            <h3>تحلیل رفتار</h3>
+            <p>مدل‌سازی و تحلیل سیستم‌های اجتماعی و اقتصادی</p>
+        </div>
+        <div class="skill">
+            <svg viewBox="0 0 64 64"><rect x="10" y="10" width="44" height="44"/></svg>
+            <h3>تایپ حرفه‌ای</h3>
+            <p>تایپ PDF به Word با دقت و قالب‌بندی عالی</p>
+        </div>
+        <div class="skill">
+            <svg viewBox="0 0 64 64"><polygon points="32,0 64,64 0,64"/></svg>
+            <h3>طراحی لوگو</h3>
+            <p>ایجاد لوگو و پوستر با SVG انیمیشنی</p>
+        </div>
+    </div>
+</section>
+
+<section id="arkhavia">
+    <h2>آرکاویا – Civilization of Rooted Awakening</h2>
+    <p style="max-width:900px;margin:0 auto;text-align:center;line-height:1.8;">آرکاویا یک سیستم مالی و اجتماعی نوآورانه است که بر پایه اعتماد اجتماعی و شفافیت کامل ساخته شده است. کاربران می‌توانند اعتبار کسب کنند، وام دریافت کنند و ارزش شبکه را افزایش دهند.</p>
+    <div class="table-container">
+    <table>
+        <tr><th>ویژگی</th><th>توضیح</th></tr>
+        <tr><td>سیستم اعتبار اجتماعی (C)</td><td>کاربران با فعالیت‌های واقعی و پاسخگویی به وام‌ها، امتیاز می‌گیرند.</td></tr>
+        <tr><td>قرعه‌کشی و مشوق‌ها</td><td>کاربران جدید یا کم‌اعتبار از طریق قرعه‌کشی دسترسی به وام پیدا می‌کنند.</td></tr>
+        <tr><td>وام بدون بهره</td><td>سیستم به جای بهره، رفتار مسئولانه را افزایش می‌دهد.</td></tr>
+        <tr><td>شفافیت تراکنش‌ها</td><td>هر تراکنش، وام، و رتبه اعتباری روی بلاکچین ثبت می‌شود.</td></tr>
+        <tr><td>قابل توسعه و مقیاس‌پذیر</td><td>طراحی ماژولار و معماری microservices اجازه می‌دهد سیستم با افزایش کاربران رشد کند.</td></tr>
+        <tr><td>امنیت و احراز هویت</td><td>احراز هویت امن با JWT/OAuth2 و مدیریت هویت دیجیتال.</td></tr>
+    </table>
+    </div>
+    <p style="max-width:900px;margin:2rem auto;text-align:center;line-height:1.8;"><strong>چشم‌انداز:</strong> آرکاویا فراتر از یک سیستم مالی است؛ کاربران منابع مالی، اعتماد و اعتبار اجتماعی کسب می‌کنند و بخشی از یک شبکه پایدار و پویا می‌شوند.</p>
+</section>
+
+<section id="contact">
+    <h2>ارتباط با من</h2>
+    <p>ایمیل: <a href="mailto:amin.salehi.sec@gmail.com">amin.salehi.sec@gmail.com</a></p>
+    <p>شماره تماس: <a href="tel:+989339291935">۰۹۳۳۹۲۹۱۹۳۵</a> | <a href="tel:+989309192975">۰۹۳۰۹۱۹۲۹۷۵</a></p>
+    <div class="contact">
+        <a href="https://instagram.com/amin.salehi.lll" target="_blank">Instagram</a>
+        <a href="https://t.me/amin.salehi.lll" target="_blank">Telegram</a>
     </div>
 </section>
 
