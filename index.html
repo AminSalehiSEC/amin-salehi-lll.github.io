@@ -27,7 +27,7 @@ section p {max-width:900px; margin:0 auto 1rem; text-align:center; line-height:1
 .skill {background:white; border-radius:10px; padding:1.5rem; text-align:center; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:0.3s; opacity: 0; transform: translateY(20px);}
 .skill.is-visible {opacity: 1; transform: translateY(0); transition: opacity 0.6s ease-out, transform 0.6s ease-out;}
 .skill:hover {transform:translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.2);}
-.skill img {width:60px; height:60px; margin-bottom:1rem;}
+.skill img, .skill svg {width:60px; height:60px; margin-bottom:1rem;}
 .contact {text-align:center;}
 .contact a {display:inline-block; margin:0.5rem; padding:0.5rem 1rem; background:#3498db; color:white; border-radius:5px; transition:0.3s;}
 .contact a:hover {background:#2980b9;}
@@ -64,6 +64,7 @@ footer {background:#2c3e50; color:white; text-align:center; padding:2rem;}
 <section id="skills">
 <h2 id="skillsTitle">مهارت‌ها</h2>
 <div class="skills">
+
 <div class="skill">
 <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo">
 <h3 id="skillTitle1">پایتون</h3>
@@ -71,7 +72,14 @@ footer {background:#2c3e50; color:white; text-align:center; padding:2rem;}
 </div>
 
 <div class="skill">
-<img src="https://i.imgur.com/gK6n9oF.png" alt="لوگوی تحلیل رفتار">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <g fill="none" stroke="#3498db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path class="brain-line" d="M32 2 C20 2 12 10 12 22 C12 34 20 42 32 42 C44 42 52 34 52 22 C52 10 44 2 32 2 Z"/>
+    <path class="brain-line" d="M32 42 L32 62"/>
+    <path class="brain-line" d="M32 62 L24 54"/>
+    <path class="brain-line" d="M32 62 L40 54"/>
+  </g>
+</svg>
 <h3 id="skillTitle2">تحلیل رفتار</h3>
 <p id="skillText2">مدل‌سازی و تحلیل سیستم‌های اجتماعی و اقتصادی</p>
 </div>
@@ -81,11 +89,13 @@ footer {background:#2c3e50; color:white; text-align:center; padding:2rem;}
 <h3 id="skillTitle3">تایپ حرفه‌ای</h3>
 <p id="skillText3">تایپ PDF به Word با دقت و قالب‌بندی عالی</p>
 </div>
+
 <div class="skill">
 <img src="https://cdn-icons-png.flaticon.com/512/1250/1250615.png" alt="Design Logo">
 <h3 id="skillTitle4">طراحی لوگو</h3>
 <p id="skillText4">ایجاد لوگو و پوستر با SVG انیمیشنی</p>
 </div>
+
 </div>
 </section>
 
@@ -123,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function typeText(element, speed = 50, callback) {
         if (!element || animatedElements.has(element.id)) return;
-
         animatedElements.add(element.id);
         const text = element.innerText;
         element.innerText = '';
@@ -177,6 +186,19 @@ document.addEventListener('DOMContentLoaded', () => {
                         typeText(paragraph, 30);
                     });
                 }, index * 200); 
+
+                // انیمیشن مغز برای تحلیل رفتار
+                const brainLines = skill.querySelectorAll('.brain-line');
+                if (brainLines.length) {
+                    brainLines.forEach(line => {
+                        const length = line.getTotalLength();
+                        line.style.strokeDasharray = length;
+                        line.style.strokeDashoffset = length;
+                    });
+                    brainLines.forEach((line, idx) => {
+                        gsap.to(line, {strokeDashoffset: 0, duration: 1, delay: idx * 0.3, ease: "power2.out"});
+                    });
+                }
             }
         });
     });
